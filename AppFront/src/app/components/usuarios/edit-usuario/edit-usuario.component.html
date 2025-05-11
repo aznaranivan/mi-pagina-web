@@ -1,0 +1,33 @@
+<div class="row" style="margin-left: 20px;">
+    <div class="col-12">
+        <!-- <p>{{usuarioId()}}</p> -->
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" 
+                formControlName="nombre">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input type="text" class="form-control" 
+                formControlName="apellido">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Peso</label>
+                <input type="number" class="form-control" 
+                formControlName="peso">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Edad</label>
+                <input type="number" class="form-control" 
+                formControlName="edad">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Altura</label>
+                <input type="number" class="form-control" 
+                formControlName="altura">
+            </div>
+            <input type="submit" value="Enviar" class="btn btn-info">
+        </form>
+    </div>
+</div>

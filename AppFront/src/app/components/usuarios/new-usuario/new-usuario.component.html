@@ -1,0 +1,35 @@
+<div class="formulario-wrapper fade-in">
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="formulario-card">
+    <h2 class="formulario-titulo">Completa tu información</h2>
+
+    <div class="input-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" formControlName="nombre" placeholder="Introduce tu nombre" />
+    </div>
+
+    <div class="input-group">
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" formControlName="apellido" placeholder="Introduce tu apellido" />
+    </div>
+
+    <div class="input-group">
+      <label for="peso">Peso (kg)</label>
+      <input type="number" id="peso" formControlName="peso" placeholder="Ej: 70" />
+    </div>
+
+    <div class="input-group">
+      <label for="edad">Edad</label>
+      <input type="number" id="edad" formControlName="edad" placeholder="Ej: 25" />
+    </div>
+
+    <div class="input-group">
+      <label for="altura">Altura (cm)</label>
+      <input type="number" id="altura" formControlName="altura" placeholder="Ej: 175" />
+    </div>
+
+    <div class="botones-formulario">
+      <button type="submit" class="btn-principal">Enviar</button>
+      <button type="button" class="btn-secundario" [disabled]="!formularioEnviado" (click)="irAPerfil()">Acceder</button>
+    </div>
+  </form>
+</div>

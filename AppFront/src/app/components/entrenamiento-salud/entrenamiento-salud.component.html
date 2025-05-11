@@ -1,0 +1,30 @@
+<div class="entrenamiento-wrapper">
+    <h1 class="titulo">Entrenamiento y Salud</h1>
+  
+    <!-- SECCIONES ENTRENAMIENTO -->
+    <div class="secciones-grid">
+      <div class="seccion" *ngFor="let item of entrenamiento">
+        <img [src]="item.imagen" alt="Entrenamiento">
+        <div class="contenido">
+          <span class="categoria">Entrenamiento</span>
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="separador"></div>
+  
+    <!-- SECCIONES NUTRICIÓN -->
+    <div class="secciones-grid">
+      <div class="seccion" *ngFor="let item of nutricion">
+        <img [src]="item.imagen" alt="Nutrición">
+        <div class="contenido">
+          <span class="categoria">Nutrición</span>
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

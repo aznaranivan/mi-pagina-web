@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li *ngIf="usersService.isLogged()" [routerLink]="['/usuarios']">Lista de usuarios</li>
+
+    <!-- Mostrar solo si no estamos en la página de new-usuario o app.component -->
+    <li *ngIf="!usersService.isLogged() && shouldShowLoginRegister()" [routerLink]="['/register']" class="hover-scale">REGISTRO</li>
+    <li *ngIf="!usersService.isLogged() && shouldShowLoginRegister()" [routerLink]="['/login']" class="hover-scale">LOGIN</li>
+
+    <li *ngIf="usersService.isLogged()" (click)="onClickLogout()">Logout</li>
+  </ul>
+</nav>

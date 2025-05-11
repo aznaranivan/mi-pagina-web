@@ -1,0 +1,36 @@
+<div class="alta-container">
+  <div class="profile-icon" (click)="volver()">
+    <img src="assets/silueta.png" alt="Volver">
+  </div>
+
+  <h2 class="alta-titulo">Elige tu enfoque</h2>
+
+  <div class="secciones fila-3">
+    <div class="seccion">
+      <img src="assets/alimentacion.jpg" alt="Alimentación">
+      <h3>Alimentación</h3>
+      <button class="adelante-btn" (click)="irADietas()">¡ADELANTE!</button>
+    </div>
+
+    <div class="seccion">
+      <img src="assets/actividad.jpg" alt="Ejercicio Físico">
+      <h3>Ejercicio Físico</h3>
+      <button class="adelante-btn" (click)="irAEjercicios()">¡ADELANTE!</button>
+    </div>
+
+    <div class="seccion">
+      <img src="assets/habitos.jpg" alt="Hábitos">
+      <h3>Hábitos</h3>
+      <button class="adelante-btn" (click)="irAHabitos()">¡ADELANTE!</button>
+    </div>
+  </div>
+</div>
+
+<!-- Loading animación -->
+<div class="loading-overlay" [ngClass]="{ 'visible': loading }">
+  <div class="loading-content">
+    <img src="assets/animacion-plato.gif" alt="Cargando..." class="plato-animado" />
+    <p class="cargando-texto">Preparando tu contenido...</p>
+  </div>
+</div>
+

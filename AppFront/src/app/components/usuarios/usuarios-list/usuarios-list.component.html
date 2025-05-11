@@ -1,1 +1,31 @@
-<p>usuarios-list works!</p>
+<div class="usuarios">
+  <div
+    class="usuario-card"
+    *ngFor="let usuario of arrUsuarios(); let i = index"
+    [id]="'usuario-' + usuario._id"
+  >
+    <a [routerLink]="['/usuarios', usuario._id]" class="info-btn">
+      <img src="assets/logo.jpg" alt="Info" class="info-icon" />
+    </a>
+
+    <h3>{{ usuario.nombre }}</h3>
+    <p>Apellido: {{ usuario.apellido }}</p>
+    <p>Edad: {{ usuario.edad }} años</p>
+
+    <div class="btn-group">
+      <button class="btn-verde" (click)="mostrarDetalles(usuario)">
+        Detalles
+      </button>
+      <button class="btn-rojo" (click)="onClickBorrar(usuario._id)">
+        Borrar
+      </button>
+    </div>
+
+    <div class="detalles" *ngIf="usuarioSeleccionado === usuario">
+      <div class="detalles-grid">
+        <p><strong>Peso:</strong> {{ usuario.peso }} kg</p>
+        <p><strong>Altura:</strong> {{ usuario.altura }} cm</p>
+      </div>
+    </div>
+  </div>
+</div>

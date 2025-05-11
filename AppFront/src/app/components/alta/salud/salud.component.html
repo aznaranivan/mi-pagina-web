@@ -1,0 +1,14 @@
+<div class="salud-container">
+  <h2 class="titulo">Hábitos Saludables</h2>
+
+  <div class="categoria-habito" *ngFor="let grupo of habitos">
+    <h3>{{ grupo.nombre }}</h3>
+    <div class="habitos-grid">
+      <div class="habito" *ngFor="let habito of grupo.items">
+        <img [src]="habito.imagen" [alt]="habito.titulo">
+        <h4>{{ habito.titulo }}</h4>
+        <p>{{ habito.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</div>

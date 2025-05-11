@@ -1,0 +1,24 @@
+<div class="pantalla-cargando">
+  <ng-container *ngIf="!mostrarMensaje">
+    <div class="loader"></div>
+    <p class="mensaje-cargando">Procesando el pago, por favor espera...</p>
+  </ng-container>
+
+  <ng-container *ngIf="mostrarMensaje">
+    <div class="mensaje-final">✅ ¡Pago completado con éxito!</div>
+
+    <div class="resumen-pago" *ngIf="resumen">
+      <h3>Resumen del plan contratado</h3>
+      <ul>
+        <li><strong>Plan:</strong> {{ resumen.nombre }}</li>
+        <li><strong>Precio:</strong> {{ resumen.precio }}</li>
+        <li><strong>Alta:</strong> {{ resumen.alta }}</li>
+        <li><strong>Nombre:</strong> {{ resumen.nombreUsuario }}</li>
+        <li><strong>Apellido:</strong> {{ resumen.apellidos }}</li>
+        <li><strong>Correo:</strong> {{ resumen.email }}</li>
+        <li><strong>Sexo:</strong> {{ resumen.sexo }}</li>
+      </ul>
+      <button class="btn-pdf" (click)="generarPDF()">Descargar comprobante en PDF</button>
+    </div>
+  </ng-container>
+</div>

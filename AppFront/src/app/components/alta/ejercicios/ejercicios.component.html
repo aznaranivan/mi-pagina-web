@@ -1,0 +1,14 @@
+<div class="ejercicios-container">
+  <h2 class="titulo">Ejercicios</h2>
+
+  <div class="musculo" *ngFor="let grupo of musculos">
+    <h3>{{ grupo.nombre }}</h3>
+    <div class="ejercicios-grid">
+      <div class="ejercicio" *ngFor="let ejercicio of grupo.ejercicios">
+        <img [src]="ejercicio.imagen" [alt]="ejercicio.titulo">
+        <h4>{{ ejercicio.titulo }}</h4>
+        <button class="btn-ver" (click)="verDetalle('dominadas')">Ver más</button>
+      </div>
+    </div>
+  </div>
+</div>

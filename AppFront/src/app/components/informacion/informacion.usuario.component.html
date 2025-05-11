@@ -1,0 +1,31 @@
+<div class="card-container" *ngIf="datosUsuario">
+  <div class="gym-card">
+    <div class="card-sidebar"></div>
+
+    <div class="card-content">
+      <div class="card-header">
+        <h2>FITNESSPRO</h2>
+      </div>
+
+      <div class="card-photo">
+        <img src="assets/silueta.png" alt="Foto por defecto" />
+      </div>
+
+      <div class="card-info">
+        <p><strong>Nombre:</strong> {{ datosUsuario.nombre }}</p>
+        <p><strong>Apellido:</strong> {{ datosUsuario.apellido }}</p>
+        <p><strong>Peso:</strong> {{ datosUsuario.peso }} kg</p>
+        <p><strong>Edad:</strong> {{ datosUsuario.edad }} años</p>
+        <p><strong>Altura:</strong> {{ datosUsuario.altura }} cm</p>
+      </div>
+    </div>
+
+    <div class="qr-code">
+      <img [src]="'https://api.qrserver.com/v1/create-qr-code/?data=' + randomQR + '&size=70x70'" alt="Código QR" />
+    </div>
+
+    <button class="gym-button" (click)="irAlta()" title="Ir a entrenamiento">
+      <img src="assets/brazo-pesa.png" alt="Ejercicio" />
+    </button>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 200px;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  padding: 0 40px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Contenedor gris con tamaño uniforme */
+.card-wrapper {
+  background-color: #e3e3e3;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  width: 500px;
+  max-width: 100%;
+  min-height: 580px; /* <- misma altura para todos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tarjeta interior con fondo */
+.card-acceso {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 60px 40px;
+  color: white;
+  border-radius: 24px;
+  overflow: hidden;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Fondo específico para cada tarjeta */
+.card-invitado::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/fondo3.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px); /* AQUI EL DESENFOQUE REAL */
+  z-index: 0;
+}
+
+.card-admin::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/fondo4.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  z-index: 0;
+}
+
+/* Capa oscura y difuminada más intensa */
+.card-acceso::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px); /* ⬅️ AUMENTADO de 8px a 15px */
+  z-index: 0;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-acceso > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-acceso h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.card-acceso .icono {
+  font-size: 56px;
+  margin-bottom: 25px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-acceso button {
+  margin-top: 30px;
+  background-color: #8418aa;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 18px rgba(132, 24, 170, 0.4);
+}
+
+.card-acceso button:hover {
+  background-color: #6a128a;
+  transform: translateY(-2px);
+}
+
+.card-wrapper:hover {
+  transform: translateY(-6px);
+}
+
+.disabled {
+  filter: grayscale(100%) brightness(0.6);
+  pointer-events: none;
+  opacity: 0.9;
+}

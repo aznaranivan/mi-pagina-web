@@ -1,0 +1,134 @@
+.tarjeta-wrapper {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.tarjeta-formulario {
+  flex: 2;
+}
+
+.tarjeta-formulario h2 {
+  font-size: 28px;
+  color: #8418aa;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #8418aa;
+  outline: none;
+}
+
+.tarjeta-doble {
+  display: flex;
+  gap: 20px;
+}
+
+.tarjeta-doble .form-group {
+  flex: 1;
+}
+
+.pagar-btn {
+  background-color: #8418aa;
+  color: white;
+  padding: 14px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pagar-btn:hover {
+  background-color: #6a128a;
+}
+
+/* Lado derecho: resumen */
+.resumen-box {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.resumen-box h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.resumen-box p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #444;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  color: #000;
+}
+
+.input-error {
+  border: 2px solid red !important;
+}
+
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.input-con-icono {
+  position: relative;
+}
+
+.input-con-icono input {
+  padding-right: 50px;
+}
+
+.icono-tarjeta {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 64px;
+}
+
+
+

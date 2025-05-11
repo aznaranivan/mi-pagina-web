@@ -1,1 +1,260 @@
-<router-outlet></router-outlet>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo-container" (click)="irAInicio()">
+        <img src="assets/logo2.png" alt="Logo" class="logo" style="cursor: pointer;" />
+      </div>
+
+      <nav class="nav-links">
+        <a routerLink="/nosotros" routerLinkActive="active-link">Nosotros</a>
+        <a routerLink="/precios" routerLinkActive="active-link">Precios</a>
+        <a routerLink="/atencion-cliente" routerLinkActive="active-link">Atención al Cliente</a>
+        <a routerLink="/entrenamiento-salud" routerLinkActive="active-link">Entrenamiento y salud</a>
+      </nav>
+
+      <!-- Mostrar icono usuario o botón únete según si está logueado -->
+      <div *ngIf="usuario; else botonUnete" class="usuario-box"  [class.expandido]="mostrarUsuario" (click)="toggleUsuario()">
+        <img [src]="imagenSexo" alt="Usuario" class="usuario-foto" />
+        <div class="usuario-info" *ngIf="mostrarUsuario">
+          <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+          <p><strong>Apellidos:</strong> {{ usuario.apellidos }}</p>
+          <p><strong>Email:</strong> {{ usuario.email }}</p>
+          <p><strong>Contraseña:</strong> {{ getContrasenaOculta(usuario.contrasena) }}</p>
+          <p><strong>Plan seleccionado:</strong> {{ usuario.plan | uppercase }}</p>
+          <button (click)="cerrarSesion(); $event.stopPropagation();">Cerrar sesión</button>
+        </div>
+      </div>
+
+      <ng-template #botonUnete>
+        <button #botonUnete class="join-button" (click)="mostrarUneteModal = true"> ÚNETE A NOSOTROS </button>
+      </ng-template>
+    </div>
+
+    <div class="container">
+      <app-menu></app-menu>
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- 🚀 SECCIÓN PROMOCIONAL -->
+    <ng-container *ngIf="esInicio">
+      <section class="promo-anuncio">
+        <div class="promo-contenido">
+          <div class="promo-texto">
+            <h1 class="promo-titulo">¡EMPIEZA!</h1>
+            <h2 class="promo-subtitulo">MATRÍCULA GRATIS</h2>
+            <p class="promo-detalle">
+              Únete durante los 3 primeros días de cada mes y disfruta de matrícula totalmente gratuita.
+              Vive la experiencia FitnessPro: instalaciones modernas, equipos de última generación, ambiente motivador y el respaldo de entrenadores profesionales.
+            </p>
+            <p class="promo-detalle">
+              No solo es entrenamiento: accede también a planes de nutrición personalizados, asesoramiento constante y rutinas adaptadas a tu nivel.
+              Tanto si eres principiante como avanzado, en FitnessPro llevamos tu rendimiento al siguiente nivel.
+            </p>
+            <div class="promo-botones">
+              <button class="btn-confirmar" (click)="adelante()">APÚNTATE</button>
+              <button class="boton-secundario" (click)="irAPlanes()">VER PLANES</button>
+            </div>            
+          </div>
+          <div class="promo-imagen">
+            <img src="assets/imagen-anuncio.png" alt="Promoción FitnessPro" />
+          </div>
+        </div>
+      </section>
+    </ng-container>
+
+    <!-- MOSTRAR BENEFICIOS SOLO EN LA RUTA DE INICIO -->
+    <ng-container *ngIf="esInicio">
+      <section class="fitnesspro-benefits">
+        <h2 class="benefits-title">¿Por qué FitnessPro?</h2>
+        <div class="benefits-grid">
+          <!-- 4 tarjetas de beneficio -->
+          <div class="benefit-card">
+            <div class="image-wrapper">
+              <img src="assets/beneficio-dieta.jpg" alt="Planes personalizados" class="benefit-image">
+              <div class="purple-frame"></div>
+            </div>
+            <h3 class="benefit-title">PLANES PERSONALIZADOS</h3><br>
+            <p class="benefit-text">
+              Diseñamos planes a tu medida, basados en tus objetivos, nivel físico y estilo de vida. Ya sea que busques tonificar, ganar masa muscular o mejorar tu salud general, nuestro sistema inteligente adapta el plan perfecto para ti. Cada usuario es único, y en FitnessPro lo tratamos como tal.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="image-wrapper">
+              <img src="assets/beneficio-ejercicio.jpg" alt="Rutinas adaptadas" class="benefit-image">
+              <div class="purple-frame"></div>
+            </div>
+            <h3 class="benefit-title">RUTINAS ADAPTADAS</h3><br>
+            <p class="benefit-text">
+              Accede a rutinas creadas por profesionales del fitness y actualizadas. Con videos guiados y descripciones detalladas, podrás entrenar desde cualquier lugar con confianza. Ideal para principiantes y avanzados, con opción de entrenamientos en casa o gimnasio.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="image-wrapper">
+              <img src="assets/beneficio-planes.jpg" alt="Seguimiento constante" class="benefit-image">
+              <div class="purple-frame"></div>
+            </div>
+            <h3 class="benefit-title">SEGUIMIENTO CONSTANTE</h3><br>
+            <p class="benefit-text">
+              No estás solo: nuestra plataforma te acompaña con recordatorios, estadísticas de progreso y ajustes dinámicos. Recibe sugerencias personalizadas, recomendaciones de mejora y alertas para mantenerte siempre en camino. Evoluciona con datos reales y soporte inteligente.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="image-wrapper">
+              <img src="assets/beneficio-instalaciones.jpg" alt="Entorno de calidad" class="benefit-image">
+              <div class="purple-frame"></div>
+            </div>
+            <h3 class="benefit-title">ENTORNO DE CALIDAD</h3><br>
+            <p class="benefit-text">
+              Vive la experiencia FitnessPro en espacios cómodos, seguros y equipados con tecnología moderna. Desde zonas de peso libre hasta áreas funcionales y de recuperación, entrenar aquí es disfrutar del proceso. Calidad y confort al servicio de tu bienestar físico y mental.
+            </p>
+          </div>
+        </div>
+      </section>
+    </ng-container>
+
+    <ng-container *ngIf="esInicio">
+      <section class="plan-prueba-section">
+        <div class="plan-prueba-content">
+          <div class="plan-prueba-texto">
+            <h2 class="plan-prueba-titulo"><span>Tenemos plan de prueba gratis</span> al gimnasio</h2>
+            <p class="plan-prueba-desc">
+              Presentamos nuestro plan de prueba: ven un día y conoce todo lo que FitnessPro puede ofrecerte.  
+              Disfruta de instalaciones de primer nivel y conoce a nuestro equipo sin compromiso.
+            </p>
+            <ul class="plan-prueba-lista">
+              <li> Ven y te informamos sobre nuestro gimnasio, sin cita previa</li>
+              <li>Prueba un entrenamiento gratuito guiado por nuestros entrenadores</li>
+              <li>Asesoramiento nutricional inicial incluido en tu visita</li>
+              <li>Acceso a todas las zonas: cardio, musculación, funcional y más</li>
+            </ul>
+            <p class="plan-prueba-pie">
+              ¡Queremos que vivas la experiencia completa antes de decidir!
+            </p>
+          </div>
+          <div class="plan-prueba-imagen">
+            <img src="assets/plan-prueba.png" alt="Entrenamiento de prueba FitnessPro" />
+          </div>
+        </div>
+      </section>
+    </ng-container>
+    
+
+    <!-- MODAL DE CORREO -->
+    <div class="correo-modal" *ngIf="mostrarFormularioCorreo">
+      <div class="correo-contenido">
+        <label for="correo">Introduce tu correo:</label>
+        <input type="email" id="correo" [(ngModel)]="correoUsuario" placeholder="tucorreo@ejemplo.com" />
+        <button (click)="enviarCorreo()">Enviar</button>
+        <button class="cerrar-btn" (click)="mostrarFormularioCorreo = false">Cancelar</button>
+      </div>
+    </div>
+      
+    <!-- FOOTER -->
+    <div class="bottom-footer">
+      <p class="footer-texto">No dudes en comentarnos cualquier duda:</p>
+      <div class="footer-icons">
+        <div class="footer-icon-wrapper" (click)="mostrarFormularioCorreo = true">
+          <img src="assets/mail-icon.png" alt="Correo" class="footer-icon" />
+        </div>
+    
+        <a href="https://www.instagram.com/fitnesspro_ia" target="_blank">
+          <div class="footer-icon-wrapper">
+            <img src="assets/instagram-icon.png" alt="Instagram" class="footer-icon" />
+          </div>
+        </a>
+    
+        <a href="https://wa.me/34605915696" target="_blank">
+          <div class="footer-icon-wrapper">
+            <img src="assets/whatsapp-icon.png" alt="WhatsApp" class="footer-icon" />
+          </div>
+        </a>
+      </div>
+
+      <!-- Texto legal -->
+      <div class="footer-legal" style="color: white; text-align: center; font-size: 15px; margin-top: 20px;">
+        POLÍTICA DE COOKIES Y PÍXELES · CONDICIONES GENERALES DE USO · PRIVACIDAD Y PROTECCIÓN DE DATOS · NORMATIVA DE LOS CLUBES · CONTRATO · DESISTIMIENTO · PLATAFORMA UE RESOLUCIÓN DE LITIGIOS EN LÍNEA · CANAL ÉTICO <br />
+        <strong>© FITNESSPRO - RESERVADOS TODOS LOS DERECHOS</strong>
+      </div>
+
+      <!-- Logo en blanco -->
+      <div style="text-align: center; margin-top: 10px;">
+        <img src="assets/logo2.png" alt="Logo FitnessPro" style="filter: brightness(0) invert(1); width: 200px;" />
+      </div>
+    </div>
+  </div> 
+</body>
+
+<div *ngIf="mostrarCookieBanner" class="cookie-blocker">
+  <div class="cookie-banner-bottom">
+    <h2>Política sobre cookies</h2>
+    <p>
+      Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarte publicidad
+      relacionada con tus preferencias, mediante el análisis de tus hábitos de navegación.
+    </p>
+    <p>
+      Puedes obtener más información en nuestra <a href="#">Política de Cookies</a>.
+    </p>
+    <button class="cookie-aceptar-btn" (click)="aceptarCookies()">ACEPTAR</button>
+  </div>
+</div>
+
+<!-- MODAL DE ACCESO -->
+<div *ngIf="mostrarAccesoModal" class="modal-overlay">
+  <div class="modal-acceso">
+    <h2>BIENVENIDO A FITNESSPRO</h2>
+    <p>¿Cómo quieres acceder?</p>
+
+    <div class="opciones-acceso">
+      <label>
+        <input
+          type="radio"
+          name="acceso"
+          value="invitado"
+          [(ngModel)]="tipoAccesoSeleccionado"
+        />
+        Acceder como Invitado
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="acceso"
+          value="administrador"
+          [(ngModel)]="tipoAccesoSeleccionado"
+        />
+        Acceder como Administrador
+      </label>
+    </div>
+
+    <button class="btn-confirmar" (click)="confirmarAcceso()">Continuar</button>
+  </div>
+</div>
+
+<!-- MODAL ÚNETE A FITNESSPRO -->
+<div *ngIf="mostrarUneteModal" class="modal-overlay">
+  <div class="modal-acceso">
+    <h2>¿Estás preparado para unirte a nosotros?</h2>
+
+    <div class="opciones-acceso">
+      <label style="display: flex; align-items: center;">
+        <input type="radio" name="joinOption" style="margin-right: 10px;" />
+        <span>¡SÍÍÍ!</span>
+      </label>
+
+      <div class="btn-opciones">
+        <button class="btn-no" *ngIf="!noPresionado" (click)="noPresionado = true">NO</button>
+        <div *ngIf="noPresionado" class="texto-no">AQUÍ no existe un no!!</div>
+      </div>
+    </div>
+
+    <button class="btn-confirmar" (click)="confirmarUnete('si')">Continuar</button>
+  </div>
+</div>
+
+
+
+
+

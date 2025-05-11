@@ -1,0 +1,32 @@
+<!-- Icono del usuario si está logueado -->
+<div *ngIf="usuario" class="usuario-box" [class.expandido]="mostrarUsuario" (click)="toggleUsuario()">
+  <img [src]="imagenSexo" alt="Usuario" class="usuario-foto" />
+
+  <div class="usuario-info" *ngIf="mostrarUsuario">
+    <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+    <p><strong>Apellidos:</strong> {{ usuario.apellidos }}</p>
+    <p><strong>Email:</strong> {{ usuario.correo }}</p>
+    <p><strong>Contraseña:</strong> {{ getContrasenaOculta(usuario.contrasena) }}</p>
+    <p><strong>Plan seleccionado:</strong> {{ usuario.plan | uppercase }}</p>
+    <button (click)="cerrarSesion(); $event.stopPropagation();">Cerrar sesión</button>
+  </div>
+</div>
+
+<!-- Resumen del plan -->
+<div class="pago-wrapper animate-slide-in">
+  <h2>Resumen del Plan: <span class="plan">{{ plan | uppercase }}</span></h2>
+
+  <div class="detalle-box">
+    <div class="linea">
+      <strong>💰 Precio:</strong> {{ detalles.precio }}
+    </div>
+    <div class="linea" *ngFor="let item of detalles.beneficios">
+      ✅ {{ item }}
+    </div>
+    <div class="linea cuota">
+      <strong>{{ detalles.alta }}</strong>
+    </div>
+  </div>
+
+  <button class="btn-pagar" (click)="irAPagoTarjeta()">Pagar Ahora</button>
+</div>

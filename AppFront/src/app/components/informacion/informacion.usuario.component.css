@@ -1,0 +1,119 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.gym-card {
+  position: relative;
+  width: 680px;
+  display: flex;
+  background-color: #e3e3e3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.gym-card:hover {
+  transform: translateY(-5px);
+}
+
+/* BARRA LATERAL MORADA */
+.card-sidebar {
+  width: 22px;
+  background-color: #8418aa;
+}
+
+/* CONTENIDO PRINCIPAL */
+.card-content {
+  padding: 30px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TÍTULO */
+.card-header h2 {
+  color: #8418aa;
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* FOTO */
+.card-photo {
+  margin-bottom: 20px;
+}
+
+.card-photo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #8418aa;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* INFO TEXTO */
+.card-info {
+  text-align: left;
+  width: 100%;
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+  padding-left: 40px;
+}
+
+.card-info p {
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+/* BOTÓN FLOTANTE */
+.gym-button {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gym-button img {
+  width: 100px;
+  height: 80px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.gym-button:hover img {
+  transform: scale(1.1);
+}
+
+.qr-code {
+  position: absolute;
+  bottom: 155px; /* 📍 más arriba que antes */
+  right: 40px;
+  background: white;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.qr-code img {
+  width: 120px;
+  height: 120px;
+}
+
+

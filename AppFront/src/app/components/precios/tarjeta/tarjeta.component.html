@@ -1,0 +1,98 @@
+<div class="tarjeta-wrapper animate-fade-in">
+  <div class="tarjeta-formulario">
+    <h2>Información de pago</h2>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        (input)="validarEmail()"
+        [class.input-error]="emailInvalido"
+        placeholder="tuemail@ejemplo.com"
+      />
+      <div *ngIf="emailInvalido" class="error-text">
+        Esta dirección de correo no es válida
+      </div>
+    </div>
+
+    <div class="form-group tarjeta-input-con-icono">
+      <label for="numero">Número de tarjeta</label>
+      <div class="input-con-icono">
+        <input
+          id="numero"
+          type="text"
+          [ngModel]="tarjeta.numero"
+          name="numero"
+          (input)="onCardNumberInput($event)"
+          maxlength="19"
+          placeholder="1234 5678 9012 3456"
+        />
+        <img src="assets/mastercard-logo.png" alt="Mastercard" class="icono-tarjeta" />
+      </div>
+    </div>
+
+
+    <div class="tarjeta-doble">
+      <div class="form-group">
+        <label for="caducidad">Fecha de caducidad</label>
+        <input
+          id="caducidad"
+          type="text"
+          [(ngModel)]="tarjeta.caducidad"
+          name="caducidad"
+          placeholder="MM / AA"
+          maxlength="7"
+          (input)="formatearCaducidad($event)"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="cvc">Código de seguridad</label>
+        <input
+          id="cvc"
+          type="text"
+          [(ngModel)]="tarjeta.cvc"
+          name="cvc"
+          placeholder="CVV"
+          maxlength="4"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="titular">Titular de la tarjeta</label>
+      <input
+        id="titular"
+        type="text"
+        [ngModel]="tarjeta.titular"
+        name="titular"
+        (input)="onTitularInput($event)"
+        placeholder="Nombre del titular"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="pais">País</label>
+      <select id="pais" [(ngModel)]="pais" name="pais">
+        <option value="España">España</option>
+      </select>
+    </div>
+
+    <button class="pagar-btn" (click)="finalizarPago()">
+      Pagar {{ detalles?.precio }}
+    </button>
+  </div>
+
+  <div class="resumen-box">
+    <h3>Resumen del plan</h3>
+    <p><strong>Plan:</strong> {{ detalles?.nombre }}</p>
+    <p><strong>Precio:</strong> {{ detalles?.precio }}</p>
+    <p><strong>Alta:</strong> {{ detalles?.alta }}</p>
+    <div class="total">Total: {{ detalles?.precio }}</div>
+  </div>
+</div>
+
+

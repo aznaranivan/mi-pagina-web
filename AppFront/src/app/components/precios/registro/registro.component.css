@@ -1,0 +1,117 @@
+.registro-wrapper {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .registro-wrapper h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #8418aa;
+  }
+  
+  input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #8418aa;
+    color: white;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #6a128a;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.7s ease forwards;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.7s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .campo {
+    margin-bottom: 16px;
+  }
+  
+  .detalle-box {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .linea {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  .cuota {
+    font-weight: bold;
+    color: #8418aa;
+  }
+  
+  .btn-pagar {
+    background-color: #8418aa;
+    color: white;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333; /* Asegura buen contraste con fondo blanco */
+    font-size: 15px;
+  }
+  
+  .mensaje-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+input.error,
+select.error {
+  border-color: red;
+}
+
+
+  
+  

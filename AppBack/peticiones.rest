@@ -1,4 +1,49 @@
 GET http://localhost:3000/api/usuarios
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjdkMTc2MmM1NmVlNjRmNjFjZGRkNjkxIiwidXNlcl9yb2xlIjoicmVndWxhciIsImlhdCI6MTc0MTg2MzQwM30.f_v-1hJLyRted-HwIzv50YLYOOHTXJcnsJO-tfgaYD8
 
 ###
 GET http://localhost:3000/api/usuarios/677e58340cc1e913c12039ef
+
+###
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "nombre": "Ivan",
+    "apellido": "Fernandez",
+    "peso": 82,
+    "edad": 21,
+    "altura": 180
+  }
+
+###
+PUT http://localhost:3000/api/usuarios/677e58340cc1e913c12039ef
+Content-Type: application/json
+
+{
+    "peso": 78,
+    "edad": 23,
+    "altura": 176
+}
+
+###
+DELETE http://localhost:3000/api/usuarios/677e584d0cc1e913c12039f0
+
+###
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+  "username": "federico",
+  "email": "fede@gmail.com",
+  "password": "12345"
+}
+
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "fede@gmail.com",
+  "password": "12345"
+}

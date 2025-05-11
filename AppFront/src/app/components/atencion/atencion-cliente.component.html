@@ -1,0 +1,123 @@
+<div class="atencion-banner">
+  <div class="banner-texto">
+    <h2>Tu opinión importa, comparte con nosotros tus dudas y comentarios.</h2>
+  </div>
+</div>
+
+<form #form="ngForm" (ngSubmit)="enviarFormulario(form)" class="formulario-contacto">
+
+  <!-- Nombre -->
+  <div class="campo">
+    <input type="text" name="nombre" ngModel required placeholder="Nombre *"
+           #nombre="ngModel"
+           [class.input-error]="nombre.invalid && nombre.touched">
+    <div *ngIf="nombre.invalid && nombre.touched" class="mensaje-error">
+      Campo obligatorio
+    </div>
+  </div>
+
+  <!-- Apellidos -->
+  <div class="campo">
+    <input type="text" name="apellidos" ngModel required placeholder="Apellidos *"
+           #apellidos="ngModel"
+           [class.input-error]="apellidos.invalid && apellidos.touched">
+    <div *ngIf="apellidos.invalid && apellidos.touched" class="mensaje-error">
+      Campo obligatorio
+    </div>
+  </div>
+
+  <!-- Móvil -->
+  <div class="campo">
+    <input type="tel" name="movil" ngModel required pattern="^[0-9]{9}$"
+           placeholder="Móvil *"
+           (input)="soloNumeros($event)"
+           #movil="ngModel"
+           [class.input-error]="movil.invalid && movil.touched">
+    <div *ngIf="movil?.invalid && movil?.errors?.['pattern'] && movil?.touched" class="mensaje-error">
+        Obligatorio poner 9 dígitos
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="campo">
+    <input type="email" name="email" [(ngModel)]="email" required email
+           placeholder="Email *"
+           #correo="ngModel"
+           [class.input-error]="correo.invalid && correo.touched">
+    <div *ngIf="correo?.errors?.['email'] && correo.touched" class="mensaje-error">
+      Dirección de correo no válida
+    </div>
+  </div>
+
+  <!-- Confirmar Email -->
+  <div class="campo">
+    <input type="email" name="confirmarEmail" [(ngModel)]="confirmarEmail" required email
+           placeholder="Confirmar Email *"
+           #confirmar="ngModel"
+           [class.input-error]="(confirmarEmail !== email && confirmar.touched)">
+    <div *ngIf="confirmarEmail !== email && confirmar.touched" class="mensaje-error">
+      Los correos no coinciden
+    </div>
+  </div>
+
+  <!-- Tipo de Consulta -->
+  <div class="campo">
+    <select name="tipoConsulta" ngModel required #tipoConsulta="ngModel"
+            [class.input-error]="tipoConsulta.invalid && tipoConsulta.touched">
+      <option value="" disabled selected>Tipo de Consulta *</option>
+      <option value="Instalaciones">Instalaciones</option>
+      <option value="Precios">Precios</option>
+      <option value="Entrenamiento">Entrenamiento</option>
+      <option value="Dietas">Dietas</option>
+      <option value="Otros">Otros</option>
+    </select>
+    <div *ngIf="tipoConsulta.invalid && tipoConsulta.touched" class="mensaje-error">
+      Campo obligatorio
+    </div>
+  </div>
+
+  <!-- Asunto -->
+  <div class="campo">
+    <input type="text" name="asunto" ngModel required placeholder="Asunto *"
+           #asunto="ngModel"
+           [class.input-error]="asunto.invalid && asunto.touched">
+    <div *ngIf="asunto.invalid && asunto.touched" class="mensaje-error">
+      Campo obligatorio
+    </div>
+  </div>
+
+  <!-- Mensaje -->
+  <div class="campo">
+    <textarea name="mensaje" [(ngModel)]="mensajeTexto" required #mensaje="ngModel"
+              placeholder="Mensaje *"
+              [class.input-error]="mensajeInvalido && mensaje.touched"></textarea>
+    <div *ngIf="mensajeInvalido && mensaje.touched" class="mensaje-error">
+        El mensaje debe contener al menos 10 palabras
+    </div>      
+  </div>
+
+  <!-- Privacidad -->
+  <div class="campo">
+    <label class="privacidad">
+      <input type="checkbox" name="privacidad" ngModel required #privacidad="ngModel">
+      He leído y acepto la <a href="/politica-privacidad" target="_blank">política de privacidad</a>.
+    </label>
+    <div *ngIf="privacidad.invalid && privacidad.touched" class="mensaje-error">
+      Debes aceptar la política de privacidad
+    </div>
+  </div>
+
+  <!-- Botón -->
+  <button type="submit"
+    [disabled]="
+      !form.valid ||
+      email !== confirmarEmail ||
+      mensajeInvalido
+    ">
+    Enviar
+  </button>
+
+  <div *ngIf="exito" class="mensaje-exito">
+    Mensaje enviado con éxito
+  </div>
+</form>

@@ -1,1 +1,10 @@
-<p>detail-usuario works!</p>
+<div class="perfil-usuario-container">
+  <div class="perfil-card">
+    <h2 class="perfil-nombre">{{ usuario().nombre }} {{ usuario().apellido }}</h2>
+    <div class="perfil-datos">
+      <p><strong>Edad:</strong> {{ usuario().edad }} años</p>
+      <p><strong>Peso:</strong> {{ usuario().peso }} kg</p>
+      <p><strong>Altura:</strong> {{ usuario().altura }} cm</p>
+    </div>
+  </div>
+</div>

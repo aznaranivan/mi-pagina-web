@@ -1,0 +1,35 @@
+nav {
+  margin-top: 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 12px;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 10px 20px;
+  background-color: #a141cf; /* morado principal */
+  color: white;
+  cursor: pointer;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li:hover {
+  background-color: #861dbb; /* tono morado más oscuro */
+  transform: scale(1.1);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.15);
+}

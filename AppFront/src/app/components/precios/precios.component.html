@@ -1,0 +1,136 @@
+<div class="precios-wrapper">
+    <!-- BLOQUE SUPERIOR MORADO CON FONDO DIAGONAL -->
+    <div class="header-morado">
+      <h1>PRECIOS</h1>
+    </div>
+  
+    <!-- DESCRIPCIÓN DE INTRODUCCIÓN -->
+    <section class="precios-header">
+      <p>Una sola sede. Todos los recursos que necesitas para transformar tu cuerpo y tu estilo de vida.</p>
+    </section>
+  
+    <!-- TARJETAS DE PLANES -->
+    <div class="precios-planes">
+      <!-- PLAN BÁSICO -->
+      <div class="plan-card">
+        <div class="plan-imagen comfort"></div>
+        <h2>PLAN BÁSICO</h2>
+        <p class="precio"><strong>14,90€</strong> / mes</p>
+        <div class="promo">Ideal para iniciarte a tu ritmo</div>
+        <ul>
+          <li>✔ Acceso a zona de entrenamiento libre</li>
+          <li>✔ Rutinas base desde la app</li>
+          <li>✔ Uso completo de vestuarios y duchas</li>
+        </ul>
+        <button class="btn-elige" (click)="irARegistro('basico')">EMPEZAR PLAN BASICO</button>
+        <p class="cuota">Cuota de alta: 10€</p>
+      </div>
+  
+      <!-- PLAN AVANZADO -->
+      <div class="plan-card">
+        <div class="plan-imagen premium"></div>
+        <h2>PLAN AVANZADO</h2>
+        <p class="precio"><strong>24,90€</strong> / mes</p>
+        <div class="promo">Entrena, aprende y mejora con apoyo</div>
+        <ul>
+          <li>✔ Clases dirigidas ilimitadas</li>
+          <li>✔ Rutinas + progresiones en app</li>
+          <li>✔ Acceso a seminarios y charlas mensuales</li>
+        </ul>
+        <button class="btn-elige" (click)="irARegistro('avanzado')">EMPEZAR PLAN AVANZADO</button>
+        <p class="cuota">Cuota de alta: 5€</p>
+      </div>
+  
+      <!-- PLAN TOTAL -->
+      <div class="plan-card destacado">
+        <div class="plan-etiqueta">TODO INCLUIDO</div>
+        <div class="plan-imagen ultimate"></div>
+        <h2>PLAN TOTAL</h2>
+        <p class="precio"><strong>34,90€</strong> / mes</p>
+        <div class="promo">Transformación completa guiada</div>
+        <ul>
+          <li>✔ Dieta personalizada por objetivo</li>
+          <li>✔ Rutina + seguimiento con entrenador</li>
+          <li>✔ Apoyo en salud mental y motivación</li>
+        </ul>
+        <button class="btn-elige" (click)="irARegistro('total')">EMPEZAR PLAN TOTAL</button>
+        <p class="cuota">Sin cuota de alta</p>
+      </div>
+    </div>
+</div>
+
+<div class="comparar-wrapper">
+    <h2><span class="titulo-morado">COMPARAR</span> PLANES</h2>
+    <p>Mira lo que incluyen nuestros planes y elige el que más se adapte a ti.</p>
+  
+    <div class="tabla-comparativa">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Plan Básico</th>
+            <th>Plan Avanzado</th>
+            <th class="morado">Plan Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Acceso a zona de entrenamiento libre</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+          <tr>
+            <td>Rutinas base desde la app</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+          <tr>
+            <td>Uso completo de vestuarios y duchas</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+          <tr>
+            <td>Clases dirigidas ilimitadas</td>
+            <td></td>
+            <td>✔</td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+          <tr>
+            <td>Rutinas + progresiones en app</td>
+            <td></td>
+            <td>✔</td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+          <tr>
+            <td>Acceso a seminarios y charlas mensuales</td>
+            <td></td>
+            <td>✔</td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+          <tr>
+            <td>Dieta personalizada por objetivo</td>
+            <td></td>
+            <td></td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+          <tr>
+            <td>Rutina + seguimiento con entrenador</td>
+            <td></td>
+            <td></td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+          <tr>
+            <td>Apoyo en salud mental y motivación</td>
+            <td></td>
+            <td></td>
+            <td><span class="tick-morado">✔</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+  
+  

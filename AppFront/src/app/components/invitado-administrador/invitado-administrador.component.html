@@ -1,0 +1,17 @@
+<div class="cards-container">
+  <div class="card-wrapper">
+    <div class="card-acceso card-invitado" [class.disabled]="tipoAcceso !== 'invitado'">
+      <div class="icono">👤</div>
+      <h2>Acceder como Invitado</h2>
+      <button [disabled]="tipoAcceso !== 'invitado'" (click)="entrarComoInvitado()">Entrar</button>
+    </div>
+  </div>
+
+  <div class="card-wrapper">
+    <div class="card-acceso card-admin" [class.disabled]="tipoAcceso !== 'administrador'">
+      <div class="icono">🔐</div>
+      <h2>Acceder como Administrador</h2>
+      <button [disabled]="tipoAcceso !== 'administrador'" (click)="entrarComoAdministrador()">Entrar</button>
+    </div>
+  </div>
+</div>

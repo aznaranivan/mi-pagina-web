@@ -1,0 +1,60 @@
+<div class="registro-wrapper animate-fade-in">
+  <h2>Registro para el <span class="plan">{{ plan | uppercase }}</span></h2>
+
+  <form (ngSubmit)="continuar()" #form="ngForm" class="form">
+    <div class="campo">
+      <label>Nombre:</label>
+      <input type="text" required [(ngModel)]="nombre" name="nombre" placeholder="Tu nombre" />
+    </div>
+
+    <div class="campo">
+      <label>Apellidos:</label>
+      <input type="text" required [(ngModel)]="apellidos" name="apellidos" placeholder="Tus apellidos" />
+    </div>
+
+    <div class="campo">
+      <label>Email:</label>
+      <input
+        type="email"
+        required
+        [(ngModel)]="correo"
+        name="correo"
+        placeholder="correo@ejemplo.com"
+        [class.error]="mostrarErrores && !emailValido"
+      />
+      <div *ngIf="mostrarErrores && !emailValido" class="mensaje-error">Correo inválido</div>
+    </div>
+
+    <div class="campo">
+      <label>Contraseña:</label>
+      <input
+        type="password"
+        required
+        [(ngModel)]="contrasena"
+        name="contrasena"
+        placeholder="Tu contraseña"
+        [class.error]="mostrarErrores && !contrasenaValida"
+      />
+      <div *ngIf="mostrarErrores && !contrasenaValida" class="mensaje-error">
+        Debe contener:
+        <ul>
+          <li>✅ 1 letra</li>
+          <li>✅ 1 mayúscula</li>
+          <li>✅ 1 número</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label>Sexo:</label>
+      <select required [(ngModel)]="sexo" name="sexo" [class.error]="mostrarErrores && !sexo">
+        <option value="" disabled selected>Selecciona</option>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+      </select>
+      <div *ngIf="mostrarErrores && !sexo" class="mensaje-error">Selecciona un sexo</div>
+    </div>
+
+    <button type="submit">Siguiente</button>
+  </form>
+</div>

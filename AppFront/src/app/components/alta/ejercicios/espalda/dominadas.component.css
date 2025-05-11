@@ -1,0 +1,42 @@
+.detalle-ejercicio-container {
+  background-color: #e3e3e3;
+  color: #1a1a1a;
+  padding: 40px;
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: 60px auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(132, 24, 170, 0.3);
+}
+
+h2 {
+  text-align: center;
+  font-size: 34px;
+  color: #8418aa;
+  margin-bottom: 30px;
+}
+
+.seccion {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.seccion h3 {
+  color: #8418aa;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.seccion p,
+.seccion ul {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.reps {
+  background-color: #f4e8fa;
+  border: 2px dashed #8418aa;
+}

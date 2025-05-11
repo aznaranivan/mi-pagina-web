@@ -1,0 +1,225 @@
+/* GLOBAL */
+.nosotros-global {
+    width: 99.27vw;              /* Ocupa todo el ancho real de la pantalla */
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #111;
+    overflow-x: hidden;
+    margin-top: 50px;
+    box-sizing: border-box;
+  }
+  
+  
+  /* ESPACIADOR TRANSPARENTE ENTRE BLOQUES */
+  .espacio-transparente {
+    height: 80px;
+    background: transparent;
+  }
+  
+  /* PORTADA */
+  .nosotros-portada {
+    background-color: #e3e3e3;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .nosotros-portada h1 {
+    font-size: 58px;
+    font-weight: 800;
+    color: #8418aa;
+    margin-bottom: 20px;
+  }
+  
+  .nosotros-portada p {
+    font-size: 21px;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* SECCIÓN ¿Qué encontrarás...? */
+  .nosotros-indice {
+    padding: 0 40px 60px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    border-bottom: 4px solid #8418aa;
+  }
+  
+  .nosotros-indice-content {
+    margin-top: 50px;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    border: 5px solid #e3e3e3; /* ✅ borde morado completo */
+  }
+  
+  .nosotros-indice h2 {
+    font-size: 28px;
+    color: #000;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  
+  .nosotros-indice ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .nosotros-indice li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 21px;
+    color: #444;
+    line-height: 1.5;
+  }
+  
+  .nosotros-indice li::before {
+    content: '\25CF'; /* punto sólido grande */
+    color: #8418aa;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 26px;
+    line-height: 1.2;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+
+  
+  /* BLOQUES */
+  .nosotros-bloque {
+    padding: 20px 40px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    border-bottom: 4px solid #8418aa;
+    background-color: #e3e3e3;
+  }
+
+  .nosotros-bloque.gris2 {
+    background-color: #ffffff;
+  }
+
+  .nosotros-bloque-content {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .nosotros-bloque-content2 {
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  .nosotros-bloque h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .nosotros-bloque h3 span {
+    color: #020202;
+  }
+  
+  .nosotros-bloque p {
+    font-size: 21px;
+    color: #444;
+    line-height: 1.7;
+    text-align: justify;
+    margin: 0;
+  }
+  
+  .morado {
+    color: #8418aa;
+    font-weight: bold;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nosotros-portada h1 {
+      font-size: 36px;
+    }
+  
+    .nosotros-bloque,
+    .nosotros-indice {
+      padding: 50px 20px;
+    }
+  
+    .nosotros-indice-content,
+    .nosotros-bloque-content {
+      padding: 20px;
+    }
+  
+    .nosotros-bloque h3 {
+      font-size: 22px;
+    }
+  
+    .nosotros-bloque p {
+      font-size: 16px;
+    }
+  }
+
+  .nosotros-bloques-con-imagen {
+  display: flex;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.contenido-bloques {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.imagen-lateral {
+  width: 600px; /* ajustable según tu diseño */
+  background-image: url('/assets/ropa.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Asegura que se estire verticalmente con el contenido */
+.imagen-lateral {
+  display: block;
+}
+
+/* Responsive (ocultar imagen en móviles) */
+@media (max-width: 992px) {
+  .imagen-lateral {
+    display: none;
+  }
+
+  .contenido-bloques {
+    width: 100%;
+  }
+}
+
+.mapa-gimnasio {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+    border-top: 4px solid #8418aa;
+  }
+  
+  .mapa-gimnasio h2 {
+    font-size: 26px;
+    color: #8418aa;
+    margin-bottom: 20px;
+  }
+  
+
+
+  
