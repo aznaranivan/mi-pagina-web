@@ -11,6 +11,8 @@ export class AltaComponent {
 
   loading = false;
 
+  gifSeleccionado: 'plato' | 'gym' | 'uptime' | null = null;
+
   constructor(private router: Router) {}
 
   volver() {
@@ -18,27 +20,42 @@ export class AltaComponent {
   }
 
   irADietas() {
-    this.loading = true;
-    document.body.style.overflow = 'hidden'; // Bloquea scroll
-
-    setTimeout(() => {
-      this.loading = false;
-      document.body.style.overflow = ''; // Restaura scroll
-      this.router.navigate(['/components/dietas']);
-    }, 3000);
-  }
-
-  irAEjercicios() {
   this.loading = true;
+  this.gifSeleccionado = 'plato';
+  document.body.style.overflow = 'hidden';
+
   setTimeout(() => {
     this.loading = false;
+    this.gifSeleccionado = null;
+    document.body.style.overflow = '';
+    this.router.navigate(['/components/dietas']);
+  }, 3000);
+}
+
+irAEjercicios() {
+  this.loading = true;
+  this.gifSeleccionado = 'gym';
+
+  setTimeout(() => {
+    this.loading = false;
+    this.gifSeleccionado = null;
     this.router.navigate(['/components/alta/ejercicios']);
-  }, 2000); // tiempo con la animación de carga
+  }, 2000);
 }
 
 
+
 irAHabitos() {
-  this.router.navigate(['/components/alta/salud']);
+  this.loading = true;
+  this.gifSeleccionado = 'uptime';
+  document.body.style.overflow = 'hidden';
+
+  setTimeout(() => {
+    this.loading = false;
+    this.gifSeleccionado = null;
+    document.body.style.overflow = '';
+    this.router.navigate(['/components/alta/salud']);
+  }, 2500); // ajusta el tiempo si lo deseas
 }
 
 }

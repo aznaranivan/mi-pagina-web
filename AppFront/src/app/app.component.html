@@ -6,10 +6,10 @@
       </div>
 
       <nav class="nav-links">
-        <a routerLink="/nosotros" routerLinkActive="active-link">Nosotros</a>
-        <a routerLink="/precios" routerLinkActive="active-link">Precios</a>
-        <a routerLink="/atencion-cliente" routerLinkActive="active-link">Atención al Cliente</a>
-        <a routerLink="/entrenamiento-salud" routerLinkActive="active-link">Entrenamiento y salud</a>
+        <a routerLink="/nosotros" routerLinkActive="active-link">Quiénes Somos</a>
+        <a routerLink="/precios" routerLinkActive="active-link">Servicios y Equipos</a>
+        <a routerLink="/atencion-cliente" routerLinkActive="active-link">Soporte Técnico</a>
+        <a routerLink="/entrenamiento-salud" routerLinkActive="active-link">Beneficios y Garantías</a>
       </nav>
 
       <!-- Mostrar icono usuario o botón únete según si está logueado -->
@@ -26,7 +26,7 @@
       </div>
 
       <ng-template #botonUnete>
-        <button #botonUnete class="join-button" (click)="mostrarUneteModal = true"> ÚNETE A NOSOTROS </button>
+        <button #botonUnete class="join-button" (click)="mostrarUneteModal = true"> SOLICITA INSTALACIÓN </button>
       </ng-template>
     </div>
 
@@ -40,19 +40,19 @@
       <section class="promo-anuncio">
         <div class="promo-contenido">
           <div class="promo-texto">
-            <h1 class="promo-titulo">¡EMPIEZA!</h1>
-            <h2 class="promo-subtitulo">MATRÍCULA GRATIS</h2>
+            <h1 class="promo-titulo">¡EMPIEZA CON NOSOTROS!</h1>
+            <h2 class="promo-subtitulo">PRESUPUESTOS PERSONALIZADOS</h2>
             <p class="promo-detalle">
-              Únete durante los 3 primeros días de cada mes y disfruta de matrícula totalmente gratuita.
-              Vive la experiencia FitnessPro: instalaciones modernas, equipos de última generación, ambiente motivador y el respaldo de entrenadores profesionales.
+              Solicita tu instalación durante los primeros 3 días del mes y obtén una revisión técnica gratuita.
+              Vive la experiencia de Servicios Integrales: soluciones eficientes, equipos de climatización de última tecnología y atención profesional.
             </p>
             <p class="promo-detalle">
-              No solo es entrenamiento: accede también a planes de nutrición personalizados, asesoramiento constante y rutinas adaptadas a tu nivel.
-              Tanto si eres principiante como avanzado, en FitnessPro llevamos tu rendimiento al siguiente nivel.
+              No solo instalamos: también te asesoramos en eficiencia energética, mantenimiento preventivo y energías renovables.
+              Ya sea para tu hogar o negocio, garantizamos confort, ahorro y sostenibilidad.
             </p>
             <div class="promo-botones">
-              <button class="btn-confirmar" (click)="adelante()">APÚNTATE</button>
-              <button class="boton-secundario" (click)="irAPlanes()">VER PLANES</button>
+              <button class="btn-confirmar" (click)="adelante()">SOLICITAR SERVICIO</button>
+              <button class="boton-secundario" (click)="irAPlanes()">NUESTROS EQUIPOS</button>
             </div>            
           </div>
           <div class="promo-imagen">
@@ -64,82 +64,85 @@
 
     <!-- MOSTRAR BENEFICIOS SOLO EN LA RUTA DE INICIO -->
     <ng-container *ngIf="esInicio">
-      <section class="fitnesspro-benefits">
-        <h2 class="benefits-title">¿Por qué FitnessPro?</h2>
-        <div class="benefits-grid">
-          <!-- 4 tarjetas de beneficio -->
-          <div class="benefit-card">
-            <div class="image-wrapper">
-              <img src="assets/beneficio-dieta.jpg" alt="Planes personalizados" class="benefit-image">
-              <div class="purple-frame"></div>
-            </div>
-            <h3 class="benefit-title">PLANES PERSONALIZADOS</h3><br>
-            <p class="benefit-text">
-              Diseñamos planes a tu medida, basados en tus objetivos, nivel físico y estilo de vida. Ya sea que busques tonificar, ganar masa muscular o mejorar tu salud general, nuestro sistema inteligente adapta el plan perfecto para ti. Cada usuario es único, y en FitnessPro lo tratamos como tal.
-            </p>
-          </div>
+  <section class="fitnesspro-benefits">
+    <h2 class="benefits-title">¿Por qué elegirnos?</h2>
+    <div class="benefits-grid">
+      <!-- 4 tarjetas de beneficio -->
 
-          <div class="benefit-card">
-            <div class="image-wrapper">
-              <img src="assets/beneficio-ejercicio.jpg" alt="Rutinas adaptadas" class="benefit-image">
-              <div class="purple-frame"></div>
-            </div>
-            <h3 class="benefit-title">RUTINAS ADAPTADAS</h3><br>
-            <p class="benefit-text">
-              Accede a rutinas creadas por profesionales del fitness y actualizadas. Con videos guiados y descripciones detalladas, podrás entrenar desde cualquier lugar con confianza. Ideal para principiantes y avanzados, con opción de entrenamientos en casa o gimnasio.
-            </p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="image-wrapper">
-              <img src="assets/beneficio-planes.jpg" alt="Seguimiento constante" class="benefit-image">
-              <div class="purple-frame"></div>
-            </div>
-            <h3 class="benefit-title">SEGUIMIENTO CONSTANTE</h3><br>
-            <p class="benefit-text">
-              No estás solo: nuestra plataforma te acompaña con recordatorios, estadísticas de progreso y ajustes dinámicos. Recibe sugerencias personalizadas, recomendaciones de mejora y alertas para mantenerte siempre en camino. Evoluciona con datos reales y soporte inteligente.
-            </p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="image-wrapper">
-              <img src="assets/beneficio-instalaciones.jpg" alt="Entorno de calidad" class="benefit-image">
-              <div class="purple-frame"></div>
-            </div>
-            <h3 class="benefit-title">ENTORNO DE CALIDAD</h3><br>
-            <p class="benefit-text">
-              Vive la experiencia FitnessPro en espacios cómodos, seguros y equipados con tecnología moderna. Desde zonas de peso libre hasta áreas funcionales y de recuperación, entrenar aquí es disfrutar del proceso. Calidad y confort al servicio de tu bienestar físico y mental.
-            </p>
-          </div>
+      <div class="benefit-card">
+        <div class="image-wrapper">
+          <img src="assets/beneficio-dieta.jpg" alt="Soluciones a medida" class="benefit-image">
+          <div class="purple-frame"></div>
         </div>
-      </section>
-    </ng-container>
+        <h3 class="benefit-title">SOLUCIONES PERSONALIZADAS</h3><br>
+        <p class="benefit-text">
+          Ofrecemos instalaciones y servicios adaptados a tus necesidades específicas, ya sea para tu hogar, oficina o industria. Analizamos tu espacio y diseñamos el sistema de climatización y energía renovable más eficiente y rentable para ti.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="image-wrapper">
+          <img src="assets/beneficio-ejercicio.jpg" alt="Tecnología eficiente" class="benefit-image">
+          <div class="purple-frame"></div>
+        </div>
+        <h3 class="benefit-title">TECNOLOGÍA DE PUNTA</h3><br>
+        <p class="benefit-text">
+          Trabajamos con equipos de última generación que garantizan alto rendimiento y bajo consumo energético. Desde sistemas inverter hasta soluciones híbridas, ofrecemos eficiencia, confort y sostenibilidad en cada instalación.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="image-wrapper">
+          <img src="assets/beneficio-planes.jpg" alt="Soporte profesional" class="benefit-image">
+          <div class="purple-frame"></div>
+        </div>
+        <h3 class="benefit-title">ASESORAMIENTO Y MANTENIMIENTO</h3><br>
+        <p class="benefit-text">
+          Nuestro equipo técnico te acompaña desde la planificación hasta el mantenimiento posterior. Ofrecemos seguimiento, revisiones periódicas y asistencia rápida para que tu sistema funcione siempre al máximo rendimiento.
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="image-wrapper">
+          <img src="assets/beneficio-instalaciones.jpg" alt="Instalaciones de calidad" class="benefit-image">
+          <div class="purple-frame"></div>
+        </div>
+        <h3 class="benefit-title">INSTALACIONES DE CALIDAD</h3><br>
+        <p class="benefit-text">
+          Realizamos instalaciones limpias, seguras y duraderas, cumpliendo con todas las normativas vigentes. Garantizamos acabados profesionales, integración estética y funcionalidad total para tu comodidad y confianza.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</ng-container>
+
 
     <ng-container *ngIf="esInicio">
-      <section class="plan-prueba-section">
-        <div class="plan-prueba-content">
-          <div class="plan-prueba-texto">
-            <h2 class="plan-prueba-titulo"><span>Tenemos plan de prueba gratis</span> al gimnasio</h2>
-            <p class="plan-prueba-desc">
-              Presentamos nuestro plan de prueba: ven un día y conoce todo lo que FitnessPro puede ofrecerte.  
-              Disfruta de instalaciones de primer nivel y conoce a nuestro equipo sin compromiso.
-            </p>
-            <ul class="plan-prueba-lista">
-              <li> Ven y te informamos sobre nuestro gimnasio, sin cita previa</li>
-              <li>Prueba un entrenamiento gratuito guiado por nuestros entrenadores</li>
-              <li>Asesoramiento nutricional inicial incluido en tu visita</li>
-              <li>Acceso a todas las zonas: cardio, musculación, funcional y más</li>
-            </ul>
-            <p class="plan-prueba-pie">
-              ¡Queremos que vivas la experiencia completa antes de decidir!
-            </p>
-          </div>
-          <div class="plan-prueba-imagen">
-            <img src="assets/plan-prueba.png" alt="Entrenamiento de prueba FitnessPro" />
-          </div>
-        </div>
-      </section>
-    </ng-container>
+  <section class="plan-prueba-section">
+    <div class="plan-prueba-content">
+      <div class="plan-prueba-texto">
+        <h2 class="plan-prueba-titulo"><span>Ofrecemos una evaluación gratuita</span> de tu espacio</h2>
+        <p class="plan-prueba-desc">
+          Conoce cómo podemos ayudarte con una revisión inicial sin costo. Te asesoramos sobre climatización eficiente, ahorro energético y opciones sostenibles ideales para tu vivienda o negocio.
+        </p>
+        <ul class="plan-prueba-lista">
+          <li> Visita técnica sin compromiso y asesoramiento en el lugar</li>
+          <li>Revisión del espacio y propuesta de instalación personalizada</li>
+          <li>Recomendaciones de equipos según consumo y necesidades</li>
+          <li>Consejos para mejorar el confort y reducir tu factura eléctrica</li>
+        </ul>
+        <p class="plan-prueba-pie">
+          ¡Queremos que compruebes el valor de nuestro servicio antes de contratar!
+        </p>
+      </div>
+      <div class="plan-prueba-imagen">
+        <img src="assets/plan-prueba.png" alt="Visita técnica gratuita climatización" />
+      </div>
+    </div>
+  </section>
+</ng-container>
+
     
 
     <!-- MODAL DE CORREO -->
@@ -166,22 +169,27 @@
           </div>
         </a>
     
-        <a href="https://wa.me/34605915696" target="_blank">
+        <a href="https://wa.me/34663360842" target="_blank">
           <div class="footer-icon-wrapper">
             <img src="assets/whatsapp-icon.png" alt="WhatsApp" class="footer-icon" />
           </div>
         </a>
       </div>
 
-      <!-- Texto legal -->
-      <div class="footer-legal" style="color: white; text-align: center; font-size: 15px; margin-top: 20px;">
-        POLÍTICA DE COOKIES Y PÍXELES · CONDICIONES GENERALES DE USO · PRIVACIDAD Y PROTECCIÓN DE DATOS · NORMATIVA DE LOS CLUBES · CONTRATO · DESISTIMIENTO · PLATAFORMA UE RESOLUCIÓN DE LITIGIOS EN LÍNEA · CANAL ÉTICO <br />
-        <strong>© FITNESSPRO - RESERVADOS TODOS LOS DERECHOS</strong>
-      </div>
+<!-- Texto legal -->
+<div class="footer-legal" style="color: white; text-align: center; font-size: 15px; margin-top: 20px;">
+  POLÍTICA DE COOKIES Y PÍXELES · CONDICIONES GENERALES DE USO · PRIVACIDAD Y PROTECCIÓN DE DATOS · CONTRATO · DESISTIMIENTO · PLATAFORMA UE RESOLUCIÓN DE LITIGIOS EN LÍNEA · CANAL ÉTICO <br />
+  <strong>© ECOCLIMA - RESERVADOS TODOS LOS DERECHOS <br /> <br> <br>
+  -SERVICIOS DE INSTALACIÓN, MANTENIMIENTO Y ASESORAMIENTO PROFESIONAL.  <br><br> -TRABAJAMOS CON TODAS LAS MARCAS LÍDERES DE AIRE ACONDICIONADO Y CLIMATIZACIÓN. <br> <br> -COMPROMETIDOS CON LA EFICIENCIA ENERGÉTICA, EL CONFORT Y LA SOSTENIBILIDAD PARA TU HOGAR O NEGOCIO.</strong>
+</div>
+<br>
+
+
+
 
       <!-- Logo en blanco -->
       <div style="text-align: center; margin-top: 10px;">
-        <img src="assets/logo2.png" alt="Logo FitnessPro" style="filter: brightness(0) invert(1); width: 200px;" />
+        <img src="assets/logo2.png" alt="Logo FitnessPro" style="width: 110px;" />
       </div>
     </div>
   </div> 
@@ -201,58 +209,42 @@
   </div>
 </div>
 
-<!-- MODAL DE ACCESO -->
-<div *ngIf="mostrarAccesoModal" class="modal-overlay">
-  <div class="modal-acceso">
-    <h2>BIENVENIDO A FITNESSPRO</h2>
-    <p>¿Cómo quieres acceder?</p>
 
-    <div class="opciones-acceso">
-      <label>
-        <input
-          type="radio"
-          name="acceso"
-          value="invitado"
-          [(ngModel)]="tipoAccesoSeleccionado"
-        />
-        Acceder como Invitado
-      </label>
-
-      <label>
-        <input
-          type="radio"
-          name="acceso"
-          value="administrador"
-          [(ngModel)]="tipoAccesoSeleccionado"
-        />
-        Acceder como Administrador
-      </label>
-    </div>
-
-    <button class="btn-confirmar" (click)="confirmarAcceso()">Continuar</button>
-  </div>
-</div>
-
-<!-- MODAL ÚNETE A FITNESSPRO -->
+<!-- MODAL ÚNETE A ECOCLIMA -->
 <div *ngIf="mostrarUneteModal" class="modal-overlay">
   <div class="modal-acceso">
-    <h2>¿Estás preparado para unirte a nosotros?</h2>
+    <h2>¿Estás listo para mejorar el confort de tu hogar con Ecoclima?</h2>
 
     <div class="opciones-acceso">
       <label style="display: flex; align-items: center;">
-        <input type="radio" name="joinOption" style="margin-right: 10px;" />
-        <span>¡SÍÍÍ!</span>
+        <input 
+          type="radio" 
+          name="joinOption" 
+          style="margin-right: 10px;" 
+          (click)="confirmarUnete('si')" 
+        />
+        <span>¡SÍ, QUIERO!</span>
       </label>
 
       <div class="btn-opciones">
-        <button class="btn-no" *ngIf="!noPresionado" (click)="noPresionado = true">NO</button>
-        <div *ngIf="noPresionado" class="texto-no">AQUÍ no existe un no!!</div>
+        <button 
+          class="btn-no" 
+          *ngIf="!noPresionado" 
+          (click)="mostrarMensajeNo()"
+        >
+          NO
+        </button>
+        <div *ngIf="noPresionado" class="texto-no">
+          AQUÍ NO EXISTE UN "NO" ¡EL CONFORT TE ESPERA!
+        </div>
       </div>
     </div>
-
-    <button class="btn-confirmar" (click)="confirmarUnete('si')">Continuar</button>
   </div>
 </div>
+
+
+
+
 
 
 

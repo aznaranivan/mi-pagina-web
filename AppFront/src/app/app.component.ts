@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
   mostrarAccesoModal = false;
   tipoAccesoSeleccionado: 'invitado' | 'administrador' | null = null;
 
+  
+
   correoUsuario: string = '';
   mostrarFormularioCorreo: boolean = false;
 
@@ -124,16 +126,26 @@ export class AppComponent implements OnInit {
     }
   }
 
-  confirmarUnete(opcion: 'si' | 'no') {
-    this.mostrarUneteModal = false;
-    this.noPresionado = false;
-    this.router.navigate(['/precios']).then(() => {
-      setTimeout(() => {
-        const section = document.querySelector('.precios-wrapper');
-        if (section) section.scrollIntoView({ behavior: 'smooth' });
-      }, 200);
-    });
-  }
+
+mostrarMensajeNo() {
+  this.noPresionado = true;
+  setTimeout(() => {
+    this.confirmarUnete('no');
+  }, 1500); // espera 2 segundos antes de navegar
+}
+
+confirmarUnete(opcion: 'si' | 'no') {
+  this.mostrarUneteModal = false;
+  this.noPresionado = false;
+  this.router.navigate(['/precios']).then(() => {
+    setTimeout(() => {
+      const section = document.querySelector('.precios-wrapper');
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }, 200);
+  });
+}
+
+
 
   adelante() {
   const boton = document.querySelector('.join-button') as HTMLElement;

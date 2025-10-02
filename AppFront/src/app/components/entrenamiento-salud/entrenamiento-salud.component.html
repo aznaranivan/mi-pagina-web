@@ -1,30 +1,29 @@
-<div class="entrenamiento-wrapper">
-    <h1 class="titulo">Entrenamiento y Salud</h1>
-  
-    <!-- SECCIONES ENTRENAMIENTO -->
-    <div class="secciones-grid">
-      <div class="seccion" *ngFor="let item of entrenamiento">
-        <img [src]="item.imagen" alt="Entrenamiento">
-        <div class="contenido">
-          <span class="categoria">Entrenamiento</span>
-          <h3>{{ item.titulo }}</h3>
-          <p>{{ item.descripcion }}</p>
-        </div>
-      </div>
-    </div>
-  
-    <div class="separador"></div>
-  
-    <!-- SECCIONES NUTRICIÓN -->
-    <div class="secciones-grid">
-      <div class="seccion" *ngFor="let item of nutricion">
-        <img [src]="item.imagen" alt="Nutrición">
-        <div class="contenido">
-          <span class="categoria">Nutrición</span>
-          <h3>{{ item.titulo }}</h3>
-          <p>{{ item.descripcion }}</p>
-        </div>
+<div class="beneficios-wrapper">
+  <h1 class="titulo">Beneficios y Garantías Ecoclima</h1>
+
+  <!-- SECCIONES DE BENEFICIOS -->
+  <div class="secciones-grid">
+    <div class="seccion" *ngFor="let item of beneficios">
+      <img [src]="item.imagen" alt="{{ item.titulo }}">
+      <div class="contenido">
+        <span class="categoria">Beneficio</span>
+        <h3>{{ item.titulo }}</h3>
+        <p>{{ item.descripcion }}</p>
       </div>
     </div>
   </div>
-  
+
+  <div class="separador"></div>
+
+  <!-- SECCIONES DE GARANTÍAS -->
+  <div class="secciones-grid">
+    <div class="seccion" *ngFor="let item of garantias">
+      <img [src]="item.imagen" alt="{{ item.titulo }}">
+      <div class="contenido">
+        <span class="categoria garantia">Garantía</span>
+        <h3>{{ item.titulo }}</h3>
+        <p>{{ item.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</div>

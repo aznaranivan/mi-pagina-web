@@ -1,74 +1,83 @@
-.entrenamiento-wrapper {
-    padding: 30px 40px;
-    background-color: #f7f7f7;
-    font-family: Arial, sans-serif;
-  }
-  
-  .titulo {
-    text-align: center;
-    font-size: 42px;
-    color: #8418aa;
-    font-weight: bold;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-  }
-  
-  .secciones-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Fijo a 3 columnas */
-    gap: 40px;
-    margin-bottom: 80px; /* Espacio extra entre secciones */
-  }  
-  
-  .seccion {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .seccion:hover {
-    transform: translateY(-6px);
-  }
-  
-  .seccion img {
-    width: 100%;
-    height: 380px; /* puedes probar también con 280px o 300px si lo quieres más alto */
-    object-fit: cover;
-  }  
-  
-  .contenido {
-    padding: 30px;
-  }
-  
-  .categoria {
-    background-color: #8418aa;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .contenido h3 {
-    font-size: 20px;
-    margin: 18px 0 10px;
-    color: #222;
-  }
-  
-  .contenido p {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .separador {
-    height: 7px;
-    background-color: #8418aa;
-    width: 100%;
-    margin: 80px 0;
-    border-radius: 2px;
-  }
-  
-  
+.beneficios-wrapper {
+  padding: 60px 100px; /* Más espacio lateral y vertical */
+  background: linear-gradient(to bottom, #FFFFFF, #4A9194); 
+  width: 1300px;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 55px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 50px; /* Más grande */
+  color: #2F3A52;
+  font-weight: 800;
+  margin-bottom: 70px; /* Más espacio con las tarjetas */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.secciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tarjetas más anchas */
+  gap: 50px; /* Más separación entre tarjetas */
+  margin-bottom: 100px;
+}
+
+.seccion {
+  background: #FFFFFF;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seccion:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.seccion img {
+  width: 100%;
+  height: 300px; /* Imagen mucho más grande */
+  object-fit: cover;
+}
+
+.contenido {
+  padding: 30px; /* Más aire dentro de la tarjeta */
+}
+
+.categoria {
+  display: inline-block;
+  background-color: #4A9194; 
+  color: #FFFFFF;
+  padding: 8px 18px; /* Botón más grande */
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.categoria.garantia {
+  background-color: #3D4B66; 
+}
+
+.contenido h3 {
+  font-size: 26px; /* Título más grande */
+  margin: 16px 0 12px;
+  color: #2F3A52;
+}
+
+.contenido p {
+  font-size: 18px; /* Texto más grande */
+  color: #3D4B66;
+  line-height: 1.7;
+}
+
+.separador {
+  height: 8px;
+  background: linear-gradient(to right, #4A9194, #3D4B66);
+  width: 100%;
+  margin: 100px 0;
+  border-radius: 4px;
+}

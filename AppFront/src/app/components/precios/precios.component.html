@@ -1,136 +1,339 @@
-<div class="precios-wrapper">
-    <!-- BLOQUE SUPERIOR MORADO CON FONDO DIAGONAL -->
-    <div class="header-morado">
-      <h1>PRECIOS</h1>
+<div class="servicios-wrapper">
+  <!-- CABECERA -->
+  <div class="header-ecoclima">
+    <h1>SERVICIOS Y EQUIPOS</h1>
+  </div>
+
+  <!-- DESCRIPCIÓN -->
+  <section class="servicios-header">
+    <p>
+      En <strong>EcoClima</strong> trabajamos con equipos de climatización, calefacción y aerotermia de las mejores marcas del mercado. 
+      Te ofrecemos soluciones adaptadas a tus necesidades, desde gama alta hasta opciones más económicas.
+    </p>
+  </section>
+
+  <!-- BLOQUES DE SERVICIOS -->
+  <div class="servicios-bloques">
+
+    <!-- BLOQUE FRÍO / AIRE ACONDICIONADO -->
+    <div class="bloque-servicio">
+      <h2>❄️ Aire Acondicionado</h2>
+
+      <div class="categorias">
+        <!-- GAMA ALTA -->
+        <div class="categoria-card">
+          <h3 class="titulo-alta">Gama Alta</h3>
+          <p class="desc">Máxima eficiencia, confort y tecnología de última generación.</p>
+          <ul>
+            <li>
+              Daikin – Alta eficiencia y confort total
+              <a [routerLink]="['/aire-acondicionado/daikin']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Mitsubishi Electric – Fiabilidad y bajo consumo
+              <a [routerLink]="['/aire-acondicionado/mitsubishi']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Fujitsu – Silenciosa y eficiente
+              <a [routerLink]="['/aire-acondicionado/fujitsu']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Panasonic – Alta gama con purificación
+              <a [routerLink]="['/aire-acondicionado/panasonic']" class="btn-ver">Ver más</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- GAMA MEDIA -->
+        <div class="categoria-card">
+          <h3 class="titulo-media">Gama Media</h3>
+          <p class="desc">Equilibrio entre innovación, calidad y precio competitivo.</p>
+          <ul>
+            <li>
+              LG – Innovación y diseño
+              <a [routerLink]="['/aire-acondicionado/lg']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Samsung – Tecnología y conectividad
+              <a [routerLink]="['/aire-acondicionado/samsung']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              BAXI – Fiabilidad y soporte
+              <a [routerLink]="['/aire-acondicionado/baxi']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Toshiba – Rendimiento y eficiencia
+              <a [routerLink]="['/aire-acondicionado/toshiba']" class="btn-ver">Ver más</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- GAMA ECONÓMICA -->
+        <div class="categoria-card">
+          <h3 class="titulo-economica">Gama Económica</h3>
+          <p class="desc">Opciones accesibles con buena relación calidad/precio.</p>
+          <ul>
+            <li>
+              Daitsu – Eficiencia básica a buen precio
+              <a [routerLink]="['/aire-acondicionado/daitsu']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Suneco – Asequible y funcional
+              <a [routerLink]="['/aire-acondicionado/hiyasu']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Ferroli – Compacta y económica
+              <a [routerLink]="['/aire-acondicionado/htw']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Hisense – Acceso a climatización para todos
+              <a [routerLink]="['/aire-acondicionado/hisense']" class="btn-ver">Ver más</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  
-    <!-- DESCRIPCIÓN DE INTRODUCCIÓN -->
-    <section class="precios-header">
-      <p>Una sola sede. Todos los recursos que necesitas para transformar tu cuerpo y tu estilo de vida.</p>
-    </section>
-  
-    <!-- TARJETAS DE PLANES -->
-    <div class="precios-planes">
-      <!-- PLAN BÁSICO -->
-      <div class="plan-card">
-        <div class="plan-imagen comfort"></div>
-        <h2>PLAN BÁSICO</h2>
-        <p class="precio"><strong>14,90€</strong> / mes</p>
-        <div class="promo">Ideal para iniciarte a tu ritmo</div>
-        <ul>
-          <li>✔ Acceso a zona de entrenamiento libre</li>
-          <li>✔ Rutinas base desde la app</li>
-          <li>✔ Uso completo de vestuarios y duchas</li>
-        </ul>
-        <button class="btn-elige" (click)="irARegistro('basico')">EMPEZAR PLAN BASICO</button>
-        <p class="cuota">Cuota de alta: 10€</p>
-      </div>
-  
-      <!-- PLAN AVANZADO -->
-      <div class="plan-card">
-        <div class="plan-imagen premium"></div>
-        <h2>PLAN AVANZADO</h2>
-        <p class="precio"><strong>24,90€</strong> / mes</p>
-        <div class="promo">Entrena, aprende y mejora con apoyo</div>
-        <ul>
-          <li>✔ Clases dirigidas ilimitadas</li>
-          <li>✔ Rutinas + progresiones en app</li>
-          <li>✔ Acceso a seminarios y charlas mensuales</li>
-        </ul>
-        <button class="btn-elige" (click)="irARegistro('avanzado')">EMPEZAR PLAN AVANZADO</button>
-        <p class="cuota">Cuota de alta: 5€</p>
-      </div>
-  
-      <!-- PLAN TOTAL -->
-      <div class="plan-card destacado">
-        <div class="plan-etiqueta">TODO INCLUIDO</div>
-        <div class="plan-imagen ultimate"></div>
-        <h2>PLAN TOTAL</h2>
-        <p class="precio"><strong>34,90€</strong> / mes</p>
-        <div class="promo">Transformación completa guiada</div>
-        <ul>
-          <li>✔ Dieta personalizada por objetivo</li>
-          <li>✔ Rutina + seguimiento con entrenador</li>
-          <li>✔ Apoyo en salud mental y motivación</li>
-        </ul>
-        <button class="btn-elige" (click)="irARegistro('total')">EMPEZAR PLAN TOTAL</button>
-        <p class="cuota">Sin cuota de alta</p>
+
+    <!-- BLOQUE CALEFACCIÓN Y AEROTERMIA -->
+    <div class="bloque-servicio">
+      <h2>🔥 Calefacción y Aerotermia</h2>
+
+      <div class="categorias">
+
+        <!-- GAMA ALTA -->
+        <div class="categoria-card">
+          <h3 class="titulo-alta">Gama Alta</h3>
+          <p class="desc">Máxima eficiencia, innovación y soluciones premium.</p>
+          <ul>
+            <li>
+              Viessmann – Biomasa y climatización integral
+              <a [routerLink]="['/calefaccion/viessmann']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Vaillant – Calefacción eficiente y bombas de calor
+              <a [routerLink]="['/calefaccion/vaillant']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Junkers Bosch – Calderas, aerotermia y climatización
+              <a [routerLink]="['/calefaccion/junkers']" class="btn-ver">Ver más</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- GAMA MEDIA -->
+        <div class="categoria-card">
+          <h3 class="titulo-media">Gama Media</h3>
+          <p class="desc">Equilibrio entre calidad, precio y soporte técnico.</p>
+          <ul>
+            <li>
+              Ariston Thermo – Calderas, aerotermia y confort
+              <a [routerLink]="['/calefaccion/ariston']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              BDR Thermea (BAXI, Roca) – Agua caliente y calefacción
+              <a [routerLink]="['/calefaccion/bdr']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Saunier Duval – Calderas, aerotermia y ACS
+              <a [routerLink]="['/calefaccion/saunier']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Ferroli – Calderas, biomasa y aerotermia
+              <a [routerLink]="['/calefaccion/ferroli']" class="btn-ver">Ver más</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- GAMA ECONÓMICA -->
+        <div class="categoria-card">
+          <h3 class="titulo-economica">Gama Económica</h3>
+          <p class="desc">Opciones prácticas con buena relación calidad/precio.</p>
+          <ul>
+            <li>
+              Mitsubishi Electric – Aerotermia Ecodan y climatización
+              <a [routerLink]="['/calefaccion/mitsubishi']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Daikin – Aerotermia Altherma y climatización integral
+              <a [routerLink]="['/calefaccion/daikin']" class="btn-ver">Ver más</a>
+            </li>
+            <li>
+              Panasonic – Aerotermia Aquarea y soluciones híbridas
+              <a [routerLink]="['/calefaccion/panasonic']" class="btn-ver">Ver más</a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
+  </div>
 </div>
 
-<div class="comparar-wrapper">
-    <h2><span class="titulo-morado">COMPARAR</span> PLANES</h2>
-    <p>Mira lo que incluyen nuestros planes y elige el que más se adapte a ti.</p>
-  
-    <div class="tabla-comparativa">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Plan Básico</th>
-            <th>Plan Avanzado</th>
-            <th class="morado">Plan Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Acceso a zona de entrenamiento libre</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-          <tr>
-            <td>Rutinas base desde la app</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-          <tr>
-            <td>Uso completo de vestuarios y duchas</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-          <tr>
-            <td>Clases dirigidas ilimitadas</td>
-            <td></td>
-            <td>✔</td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-          <tr>
-            <td>Rutinas + progresiones en app</td>
-            <td></td>
-            <td>✔</td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-          <tr>
-            <td>Acceso a seminarios y charlas mensuales</td>
-            <td></td>
-            <td>✔</td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-          <tr>
-            <td>Dieta personalizada por objetivo</td>
-            <td></td>
-            <td></td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-          <tr>
-            <td>Rutina + seguimiento con entrenador</td>
-            <td></td>
-            <td></td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-          <tr>
-            <td>Apoyo en salud mental y motivación</td>
-            <td></td>
-            <td></td>
-            <td><span class="tick-morado">✔</span></td>
-          </tr>
-        </tbody>
-      </table>
+<!-- SECCIÓN INDEPENDIENTE DE COMPARATIVAS -->
+<div class="comparativa-seccion">
+  <div class="comparativa-wrapper">
+
+    <!-- Comparativa Aire Acondicionado -->
+<section class="comparativa-bloque">
+  <h2>❄️ Comparativa por Gamas</h2>
+
+  <div class="comparativa-card">
+    <h3>Gama Alta</h3>
+    <div class="comparativa-cols">
+      <div class="pros">
+        <h4>✅ Pros</h4>
+        <ul>
+          <li>Máxima eficiencia energética (A+++)</li>
+          <li>Funcionamiento silencioso, ideal para habitaciones y oficinas</li>
+          <li>Tecnología avanzada: WiFi, sensores de presencia, purificación de aire</li>
+          <li>Alta durabilidad y fiabilidad respaldada por garantías extensas</li>
+        </ul>
+      </div>
+      <div class="contras">
+        <h4>⚠️ Contras</h4>
+        <ul>
+          <li>Precio elevado comparado con gamas inferiores</li>
+          <li>Requiere instalación profesional para rendimiento óptimo</li>
+        </ul>
+      </div>
     </div>
+  </div>
+
+  <div class="comparativa-card">
+    <h3>Gama Media</h3>
+    <div class="comparativa-cols">
+      <div class="pros">
+        <h4>✅ Pros</h4>
+        <ul>
+          <li>Buen equilibrio entre calidad y precio</li>
+          <li>Tecnología moderna: control remoto y conectividad WiFi básica</li>
+          <li>Diseño atractivo y adaptable a la decoración</li>
+          <li>Instalación menos compleja que la gama alta</li>
+        </ul>
+      </div>
+      <div class="contras">
+        <h4>⚠️ Contras</h4>
+        <ul>
+          <li>Menor eficiencia energética que los modelos premium</li>
+          <li>Algunas funciones avanzadas solo disponibles en gama alta</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="comparativa-card">
+    <h3>Gama Económica</h3>
+    <div class="comparativa-cols">
+      <div class="pros">
+        <h4>✅ Pros</h4>
+        <ul>
+          <li>Precio accesible para presupuestos ajustados</li>
+          <li>Instalación sencilla y rápida</li>
+          <li>Adecuado para necesidades básicas y espacios pequeños</li>
+          <li>Buena relación calidad/precio dentro de su rango</li>
+        </ul>
+      </div>
+      <div class="contras">
+        <h4>⚠️ Contras</h4>
+        <ul>
+          <li>Menor eficiencia energética y mayor consumo</li>
+          <li>Menos funciones avanzadas y diseño más sencillo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparativa Calefacción y Aerotermia -->
+<section class="comparativa-bloque">
+  <h2>🔥 Comparativa Calefacción</h2>
+
+  <div class="comparativa-card">
+    <h3>Gama Alta</h3>
+    <div class="comparativa-cols">
+      <div class="pros">
+        <h4>✅ Pros</h4>
+        <ul>
+          <li>Máxima eficiencia energética y durabilidad</li>
+          <li>Tecnología innovadora y soluciones premium</li>
+          <li>Soporte técnico especializado y confiable</li>
+          <li>Integración con sistemas de aerotermia y domótica</li>
+        </ul>
+      </div>
+      <div class="contras">
+        <h4>⚠️ Contras</h4>
+        <ul>
+          <li>Precio elevado en comparación con gamas inferiores</li>
+          <li>Instalación especializada recomendada para rendimiento óptimo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="comparativa-card">
+    <h3>Gama Media</h3>
+    <div class="comparativa-cols">
+      <div class="pros">
+        <h4>✅ Pros</h4>
+        <ul>
+          <li>Equilibrio entre precio y prestaciones</li>
+          <li>Fiabilidad adecuada para la mayoría de viviendas</li>
+          <li>Opciones con buen soporte técnico</li>
+          <li>Compatible con calefacción y aerotermia básica</li>
+        </ul>
+      </div>
+      <div class="contras">
+        <h4>⚠️ Contras</h4>
+        <ul>
+          <li>Algunas funciones avanzadas solo disponibles en gama alta</li>
+          <li>Durabilidad menor que los modelos premium</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="comparativa-card">
+    <h3>Gama Económica</h3>
+    <div class="comparativa-cols">
+      <div class="pros">
+        <h4>✅ Pros</h4>
+        <ul>
+          <li>Soluciones prácticas y funcionales</li>
+          <li>Accesible y buena relación calidad/precio</li>
+          <li>Opciones confiables para necesidades básicas</li>
+          <li>Fácil instalación y mantenimiento sencillo</li>
+        </ul>
+      </div>
+      <div class="contras">
+        <h4>⚠️ Contras</h4>
+        <ul>
+          <li>Diseño más sencillo y menos funciones avanzadas</li>
+          <li>Menor eficiencia energética y mayor consumo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div>
 </div>
-  
-  
+
+<!-- SECCIÓN GRÁFICAS DE TENDENCIAS -->
+<section class="tendencias-ventas">
+  <h2>📈 Tendencias de Demanda (2020-2025)</h2>
+
+  <div class="graficas-wrapper">
+    <!-- Aire Acondicionado -->
+    <div class="grafica-card">
+  <h3>❄️ Aire Acondicionado</h3>
+  <canvas #graficaAire class="grafica-canvas"></canvas>
+</div>
+
+    <!-- Calefacción / Aerotermia -->
+    <div class="grafica-card">
+  <h3>🔥 Calefacción y Aerotermia</h3>
+  <canvas #graficaCalefaccion class="grafica-canvas"></canvas>
+</div>
+  </div>
+</section>

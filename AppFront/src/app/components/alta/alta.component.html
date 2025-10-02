@@ -29,8 +29,27 @@
 <!-- Loading animación -->
 <div class="loading-overlay" [ngClass]="{ 'visible': loading }">
   <div class="loading-content">
-    <img src="assets/animacion-plato.gif" alt="Cargando..." class="plato-animado" />
+    <img
+      *ngIf="gifSeleccionado === 'plato'"
+      src="assets/animacion-plato.gif"
+      alt="Cargando alimentación..."
+      class="plato-animado"
+    />
+    <img
+      *ngIf="gifSeleccionado === 'gym'"
+      src="assets/gym.gif"
+      alt="Cargando ejercicios..."
+      class="gym-animado"
+    />
+    <img
+      *ngIf="gifSeleccionado === 'uptime'"
+      src="assets/uptime.gif"
+      alt="Cargando hábitos..."
+      class="uptime-animado"
+    />
     <p class="cargando-texto">Preparando tu contenido...</p>
   </div>
 </div>
+
+
 

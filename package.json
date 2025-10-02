@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "chart.js": "^4.5.0",
     "twilio": "^5.5.2"
+  },
+  "devDependencies": {
+    "@types/chart.js": "^2.9.41"
   }
 }

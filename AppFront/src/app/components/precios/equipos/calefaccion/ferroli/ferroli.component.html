@@ -1,0 +1,61 @@
+<div class="ferroli-container">
+  <h1 class="title">Equipos Ferroli - Calefacción y Aerotermia</h1>
+
+  <!-- Sección Calefacción -->
+  <h2 class="subtitle">Calefacción</h2>
+  <div class="grid-center">
+    <div class="card" *ngFor="let equipo of equipos | slice:0:4; let i = index">
+      <div class="card-content">
+        <div class="card-image">
+          <img [src]="equipo.imagen" alt="{{equipo.nombre}}">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <span class="number">{{ i + 1 }}</span>
+            <h2 class="card-title">{{ equipo.nombre }}</h2>
+          </div>
+          <div class="card-body">
+            <p><strong>⚡ Potencia:</strong> {{ equipo.potencia }}</p>
+            <p><strong>🏅 Eficiencia:</strong> {{ equipo.eficiencia }}</p>
+            <p><strong>📏 Área recomendada:</strong> {{ equipo.area }}</p>
+            <p><strong>🌱 Gas:</strong> {{ equipo.gas }}</p>
+            <p><strong>💶 Precio:</strong> {{ equipo.precio }}</p>
+          </div>
+          <div class="actions">
+            <button class="btn" (click)="verDetalles(equipo)">Ver detalles</button>
+            <button class="btn secondary" (click)="descargarManual(equipo)">Descargar manual</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Aerotermia -->
+  <h2 class="subtitle">Aerotermia</h2>
+  <div class="grid-center">
+    <div class="card" *ngFor="let equipo of equipos | slice:4:8; let i = index">
+      <div class="card-content">
+        <div class="card-image">
+          <img [src]="equipo.imagen" alt="{{equipo.nombre}}">
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <span class="number">{{ i + 1 }}</span>
+            <h2 class="card-title">{{ equipo.nombre }}</h2>
+          </div>
+          <div class="card-body">
+            <p><strong>⚡ Potencia:</strong> {{ equipo.potencia }}</p>
+            <p><strong>🏅 Eficiencia:</strong> {{ equipo.eficiencia }}</p>
+            <p><strong>📏 Área recomendada:</strong> {{ equipo.area }}</p>
+            <p *ngIf="equipo.gas"><strong>🌱 Gas:</strong> {{ equipo.gas }}</p>
+            <p><strong>💶 Precio:</strong> {{ equipo.precio }}</p>
+          </div>
+          <div class="actions">
+            <button class="btn" (click)="verDetalles(equipo)">Ver detalles</button>
+            <button class="btn secondary" (click)="descargarManual(equipo)">Descargar manual</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

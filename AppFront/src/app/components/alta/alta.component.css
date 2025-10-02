@@ -116,7 +116,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start; /* alinea arriba */
-  padding-top: 220px; /* 💡 empuja la animación hacia abajo */
+  padding-top: 280px; /* 💡 empuja la animación hacia abajo */
   z-index: 9999;
   opacity: 0;
   pointer-events: none;
@@ -146,6 +146,16 @@
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
 }
+
+.uptime-animado {
+  width: 600px;
+  max-width: 200vw;
+  height: auto;
+  margin-bottom: 25px;
+  transform: translateX(-90px); /* mueve 100px a la izquierda */
+}
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }

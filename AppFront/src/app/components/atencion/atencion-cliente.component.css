@@ -1,19 +1,20 @@
 .atencion-banner {
-  background: linear-gradient(rgba(153, 9, 226, 0.65), rgb(152, 151, 151)), 
+  background: linear-gradient(rgba(74, 145, 148, 0.65), rgba(47, 58, 82, 0.85)), 
               url('/assets/banner-atencion.jpg') no-repeat center center;
   background-size: cover;
   padding: 100px 20px 80px;
   text-align: center;
   position: relative;
   margin-bottom: 60px;
+  margin-top: 50px;
 }
 
 .banner-texto {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(255, 255, 255, 0.85);
   display: inline-block;
   padding: 30px 60px;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -21,52 +22,53 @@
 .banner-texto h2 {
   font-size: 32px;
   font-weight: 800;
-  color: #ffffff;
+  color: #2F3A52;
   margin: 0;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
   line-height: 1.4;
 }
+
 
 
 /* ---------- FORMULARIO ---------- */
 .formulario-contacto {
   max-width: 700px;
-  margin: -40px auto 60px;
+  margin: -0px auto 60px;
   background: #ffffff;
   padding: 40px;
   border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 0;
 }
+
 
 /* CAMPOS */
 input,
 select,
 textarea {
   padding: 14px 16px;
-  border: 2px solid #8418aa;
+  border: 2px solid #4A9194;
   border-radius: 10px;
   font-size: 16px;
   font-family: 'Segoe UI', sans-serif;
   transition: all 0.3s ease;
-  background-color: white;
-  color: #333;
+  background-color: #E1F0EF;
+  color: #2F3A52;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #a542cf;
-  box-shadow: 0 0 0 3px rgba(132, 24, 170, 0.15);
+  border-color: #2F3A52;
+  box-shadow: 0 0 0 3px rgba(74, 145, 148, 0.25);
 }
 
 /* BOTÓN */
 button {
-  background-color: #8418aa;
+  background-color: #4A9194;
   color: white;
   border: none;
   padding: 16px;
@@ -80,7 +82,7 @@ button {
 }
 
 button:hover {
-  background-color: #6f1290;
+  background-color: #2F3A52;
 }
 
 button:disabled {
@@ -91,7 +93,7 @@ button:disabled {
 /* ÉXITO */
 .mensaje-exito {
   color: #fff;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   padding: 10px;
   border-radius: 6px;
   text-align: center;
@@ -104,31 +106,31 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #333;
+  color: #2F3A52;
   flex-wrap: wrap;
 }
 
 .privacidad input[type="checkbox"] {
-  accent-color: #8418aa;
+  accent-color: #4A9194;
   width: 18px;
   height: 18px;
 }
 
 .privacidad a {
-  color: #8418aa;
+  color: #4A9194;
   text-decoration: underline;
 }
 
 /* ERRORES */
 .input-error {
-  border: 2px solid red !important;
-  background-color: #ffeef0;
+  border: 2px solid #E74C3C !important;
+  background-color: #fff5f5;
 }
 
 .mensaje-error {
-  color: red;
-  background-color: #fff0f0;
-  border: 1px solid red;
+  color: #E74C3C;
+  background-color: #fff5f5;
+  border: 1px solid #E74C3C;
   padding: 8px 10px;
   font-size: 14px;
   border-radius: 6px;

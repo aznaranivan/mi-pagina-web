@@ -1,6 +1,6 @@
 .login-form {
   max-width: 500px;
-  margin: 100px auto;
+  margin: 110px auto;
   background-color: #1e1e1e;
   padding: 40px 30px;
   border-radius: 18px;
@@ -11,7 +11,7 @@
 
 .titulo-login {
   text-align: center;
-  font-size: 32px;
+  font-size: 62px;
   margin-bottom: 30px;
   color: #a141cf;
 }

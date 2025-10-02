@@ -7,69 +7,49 @@ import { Component } from '@angular/core';
   styleUrls: ['./entrenamiento-salud.component.css']
 })
 export class EntrenamientoSaludComponent {
-  entrenamiento = [
+  beneficios = [
     {
-      titulo: 'Mejora tu salud cardiovascular',
-      descripcion: 'El ejercicio frecuente fortalece el corazón y mejora la circulación sanguínea.',
-      imagen: '/assets/entrenamiento/cardio.jpg'
+      titulo: 'Ahorro Energético Garantizado',
+      descripcion: 'Nuestros sistemas Ecoclima optimizan el consumo eléctrico para reducir hasta un 40% en tu factura.',
+      imagen: '/assets/ecoclima/beneficios/ahorro-energetico.jpg'
     },
     {
-      titulo: 'Reduce el estrés y la ansiedad',
-      descripcion: 'La actividad física libera endorfinas que mejoran el estado de ánimo.',
-      imagen: '/assets/entrenamiento/estres.jpg'
+      titulo: 'Instalación Rápida y Profesional',
+      descripcion: 'Contamos con técnicos certificados que realizan instalaciones limpias y sin complicaciones.',
+      imagen: '/assets/ecoclima/beneficios/instalacion-rapida.jpg'
     },
     {
-      titulo: 'Músculos que no deben faltar',
-      descripcion: 'Piernas, espalda y abdomen deben ser parte esencial de toda rutina.',
-      imagen: '/assets/entrenamiento/musculos.jpg'
+      titulo: 'Mayor Confort en tu Hogar',
+      descripcion: 'Disfruta de una temperatura agradable durante todo el año gracias a una climatización eficiente.',
+      imagen: '/assets/ecoclima/beneficios/confort-hogar.jpg'
     },
     {
-      titulo: 'Aumenta tu energía diaria',
-      descripcion: 'Entrenar regularmente combate la fatiga y mejora tu productividad.',
-      imagen: '/assets/entrenamiento/energia.jpg'
-    },
-    {
-      titulo: 'Entrena con propósito',
-      descripcion: 'Fijarte metas realistas te ayudará a mantener la motivación.',
-      imagen: '/assets/entrenamiento/metas.jpg'
-    },
-    {
-      titulo: 'Fortalece tus huesos y articulaciones',
-      descripcion: 'El entrenamiento con peso ayuda a prevenir la osteoporosis.',
-      imagen: '/assets/entrenamiento/huesos.jpg'
+      titulo: 'Atención Personalizada en tu Hogar',
+      descripcion: 'Tu proyecto es atendido directamente por un especialista que visita tu vivienda para ofrecer la mejor solución a medida.',
+      imagen: '/assets/ecoclima/beneficios/atencion-personalizada.jpg'
     }
   ];
 
-  nutricion = [
+  garantias = [
     {
-      titulo: '¿Qué son los carbohidratos?',
-      descripcion: 'Fuente principal de energía. Ideales antes del entrenamiento.',
-      imagen: '/assets/nutricion/carbohidratos.jpg'
+      titulo: 'Garantía Extendida',
+      descripcion: 'Ofrecemos garantía adicional sobre el equipo y la instalación para tu total tranquilidad.',
+      imagen: '/assets/ecoclima/garantias/garantia-extendida.jpg'
     },
     {
-      titulo: 'La importancia de la proteína',
-      descripcion: 'Ayuda a recuperar y construir tejido muscular tras el ejercicio.',
-      imagen: '/assets/nutricion/proteina.jpg'
+      titulo: 'Mantenimiento Preventivo',
+      descripcion: 'Programas de servicio para mantener tu equipo siempre en óptimas condiciones.',
+      imagen: '/assets/ecoclima/garantias/mantenimiento.jpg'
     },
     {
-      titulo: 'Grasas saludables',
-      descripcion: 'Las grasas buenas (aguacate, frutos secos) son esenciales para el cerebro.',
-      imagen: '/assets/nutricion/grasas.jpg'
+      titulo: 'Soporte Cercano y Rápido',
+      descripcion: 'Si surge algún inconveniente, nuestro equipo responderá de forma rápida para darte solución.',
+      imagen: '/assets/ecoclima/garantias/soporte.jpg'
     },
     {
-      titulo: 'Vitaminas y minerales',
-      descripcion: 'Refuerzan el sistema inmune y previenen lesiones.',
-      imagen: '/assets/nutricion/vitaminas.jpg'
-    },
-    {
-      titulo: 'Hidratación constante',
-      descripcion: 'El agua regula la temperatura y mejora el rendimiento.',
-      imagen: '/assets/nutricion/agua.jpg'
-    },
-    {
-      titulo: 'Comidas post entrenamiento',
-      descripcion: 'Una combinación de proteína y carbohidratos es clave tras entrenar.',
-      imagen: '/assets/nutricion/post-entreno.jpg'
+      titulo: 'Visita de Revisión y Presupuesto sin Compromiso',
+      descripcion: 'Nos desplazamos a tu hogar para evaluar tus necesidades y ofrecer un presupuesto detallado y gratuito.',
+      imagen: '/assets/ecoclima/garantias/revision-presupuesto.jpg'
     }
   ];
 }

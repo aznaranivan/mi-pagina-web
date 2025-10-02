@@ -25,6 +25,31 @@ import { LoadingComponent } from './components/precios/loading/loading.component
 import { EjerciciosComponent } from './components/alta/ejercicios/ejercicios.component';
 import { DominadasComponent } from "./components/alta/ejercicios/espalda/dominadas.component";
 import { SaludComponent } from "./components/alta/salud/salud.component";
+import { DaikinComponent } from './components/precios/equipos/aire-acondicionado/daikin/daikin.component';
+import { MitsubishiComponent } from './components/precios/equipos/aire-acondicionado/mitsubishi/mitsubishi.component';
+import { FujitsuComponent } from './components/precios/equipos/aire-acondicionado/fujitsu/fujitsu.component';
+import { PanasonicComponent } from './components/precios/equipos/aire-acondicionado/panasonic/panasonic.component';
+import { LgComponent } from './components/precios/equipos/aire-acondicionado/lg/lg.component';
+import { SamsungComponent } from './components/precios/equipos/aire-acondicionado/samsung/samsung.component';
+import { BaxiComponent } from './components/precios/equipos/aire-acondicionado/baxi/baxi.component';
+import { ToshibaComponent } from './components/precios/equipos/aire-acondicionado/toshiba/toshiba.component';
+import { DaitsuComponent } from './components/precios/equipos/aire-acondicionado/daitsu/daitsu.component';
+import { HiyasuComponent } from './components/precios/equipos/aire-acondicionado/hiyasu/hiyasu.component';
+import { HtwComponent } from './components/precios/equipos/aire-acondicionado/htw/htw.component';
+import { HisenseComponent } from './components/precios/equipos/aire-acondicionado/hisense/hisense.component';
+import { ViessmannComponent } from './components/precios/equipos/calefaccion/viessmann/viessmann.component';
+import { VaillantComponent } from './components/precios/equipos/calefaccion/vaillant/vaillant.component';
+import { JunkersComponent } from './components/precios/equipos/calefaccion/junkers/junkers.component';
+import { AristonComponent } from './components/precios/equipos/calefaccion/ariston/ariston.component';
+import { BdrComponent } from './components/precios/equipos/calefaccion/bdr/bdr.component';
+import { SaunierComponent } from './components/precios/equipos/calefaccion/saunier/saunier.component';
+import { FerroliComponent } from './components/precios/equipos/calefaccion/ferroli/ferroli.component';
+import { DaikinCalefaccionComponent } from './components/precios/equipos/calefaccion/daikin/daikin.component';
+import { MitsubishiCalefaccionComponent } from './components/precios/equipos/calefaccion/mitsubishi/mitsubishi.component';
+import { PanasonicCalefaccionComponent } from './components/precios/equipos/calefaccion/panasonic/panasonic.component';
+
+
+
 
 
 
@@ -59,6 +84,30 @@ const routes: Routes = [
         { path: 'components/alta/ejercicios', component: EjerciciosComponent },
         { path: 'components/alta/ejercicios/espalda/dominadas', component: DominadasComponent },
         { path: 'components/alta/salud', component: SaludComponent },
+         { path: 'aire-acondicionado/daikin', component: DaikinComponent },
+  { path: 'aire-acondicionado/mitsubishi', component: MitsubishiComponent },
+  { path: 'aire-acondicionado/fujitsu', component: FujitsuComponent },
+  { path: 'aire-acondicionado/panasonic', component: PanasonicComponent },
+  { path: 'aire-acondicionado/lg', component: LgComponent },
+  { path: 'aire-acondicionado/samsung', component: SamsungComponent },
+  { path: 'aire-acondicionado/baxi', component: BaxiComponent },
+  { path: 'aire-acondicionado/toshiba', component: ToshibaComponent },
+  { path: 'aire-acondicionado/daitsu', component: DaitsuComponent },
+  { path: 'aire-acondicionado/hiyasu', component: HiyasuComponent },
+  { path: 'aire-acondicionado/htw', component: HtwComponent },
+  { path: 'aire-acondicionado/hisense', component: HisenseComponent },
+  { path: 'calefaccion/daikin', component: DaikinCalefaccionComponent },
+{ path: 'calefaccion/mitsubishi', component: MitsubishiCalefaccionComponent },
+{ path: 'calefaccion/panasonic', component: PanasonicCalefaccionComponent },
+{ path: 'calefaccion/viessmann', component: ViessmannComponent },
+{ path: 'calefaccion/vaillant', component: VaillantComponent },
+{ path: 'calefaccion/junkers', component: JunkersComponent },
+{ path: 'calefaccion/ariston', component: AristonComponent },
+{ path: 'calefaccion/bdr', component: BdrComponent },
+{ path: 'calefaccion/saunier', component: SaunierComponent },
+{ path: 'calefaccion/ferroli', component: FerroliComponent },
+
+        
 
         
 

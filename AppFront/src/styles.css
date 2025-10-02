@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+/* GLOBAL: styles.css */
+
+/* Contenedor que escala TODO a 67% */
+.zoom-wrapper {
+  zoom: 0.67;              /* escala la página completa */
+  width: 100%;
+  height: 100%;
+  overflow: visible;        /* aseguramos que no se recorte nada */
+}
+
+/* Ajustes de body/html */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;       /* elimina scroll horizontal */
+  overflow-y: auto;         /* scroll vertical normal */
+}

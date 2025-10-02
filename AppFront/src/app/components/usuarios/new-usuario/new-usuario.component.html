@@ -14,18 +14,43 @@
 
     <div class="input-group">
       <label for="peso">Peso (kg)</label>
-      <input type="number" id="peso" formControlName="peso" placeholder="Ej: 70" />
+        <input
+          type="text"
+          id="peso"
+          maxlength="3"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          formControlName="peso"
+          placeholder="Ej: 70"
+        />
     </div>
 
     <div class="input-group">
       <label for="edad">Edad</label>
-      <input type="number" id="edad" formControlName="edad" placeholder="Ej: 25" />
+        <input
+          type="text"
+          id="edad"
+          maxlength="2"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          formControlName="edad"
+          placeholder="Ej: 25"
+        />
     </div>
 
     <div class="input-group">
       <label for="altura">Altura (cm)</label>
-      <input type="number" id="altura" formControlName="altura" placeholder="Ej: 175" />
+        <input
+          type="text"
+          id="altura"
+          maxlength="3"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          formControlName="altura"
+          placeholder="Ej: 175"
+        />
     </div>
+
 
     <div class="botones-formulario">
       <button type="submit" class="btn-principal">Enviar</button>

@@ -1,336 +1,343 @@
-.precios-wrapper {
-    width: 60vw;
-    padding: 80px 40px;
-    background-color: #e3e3e3;
-    height: 1250px;
-    color: #111;
-    font-family: Arial, sans-serif;
-    margin-top: 50px;
-  }
+/* ===== CONTENEDOR GENERAL ===== */
+.servicios-wrapper {
+  width: 100%;
+  padding: 80px 40px;
+  margin-top: 50px;
+  background-color: #f5f7f7;
+  color: #2F3A52;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  box-sizing: border-box;
+}
 
-  .header-morado {
-    background-color: #8418aa;
-    color: white;
-    padding: 100px 40px 60px;
-    text-align: center;
-    clip-path: polygon(0 0, 100% 0, 120% 60%, 0% 100%);
-    position: relative;
-    z-index: 1;
-  }
-  
-  .header-morado h1 {
-    font-size: 56px;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  /* Encabezado */
-.precios-header {
+/* ===== CABECERA ===== */
+.header-ecoclima {
+  background: linear-gradient(135deg, #4A9194, #3D4B66);
+  color: #fff;
+  padding: 100px 40px 60px;
   text-align: center;
-  margin-bottom: 60px;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
-.precios-header h1 {
-  font-size: 48px;
-  color: #8418aa;
+.header-ecoclima h1 {
+  font-size: 52px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.linea-morada {
-  width: 80px;
-  height: 4px;
-  background-color: #8418aa;
-  margin: 20px auto 40px auto;
-  border-radius: 2px;
+/* ===== INTRO ===== */
+.servicios-header {
+  text-align: center;
+  margin: 40px auto 60px auto;
+  max-width: 900px;
 }
 
-.precios-header p {
+.servicios-header p {
   font-size: 20px;
+  line-height: 1.6;
   color: #333;
 }
 
-/* Contenedor de tarjetas */
-.precios-planes {
+/* ===== BLOQUES DE SERVICIOS ===== */
+.servicios-bloques {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 40px;
-  flex-wrap: nowrap;
-  max-width: 1400px;
-  margin: 0 auto;
+  flex-direction: column;
+  gap: 80px;
 }
 
-/* Animación al cargar */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.bloque-servicio h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #3D4B66;
+  border-left: 6px solid #4A9194;
+  padding-left: 15px;
 }
 
-/* Tarjeta individual */
-.plan-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  padding: 30px 20px;
-  text-align: center;
-  width: 100%;
-  max-width: 380px;
+/* ===== TARJETAS ===== */
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.categoria-card {
+  flex: 1;
+  min-width: 300px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.categoria-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.categoria-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.titulo-alta { color: #2F3A52; }
+.titulo-media { color: #4A9194; }
+.titulo-economica { color: #3D4B66; }
+
+.categoria-card .desc {
+  font-size: 15px;
+  margin-bottom: 18px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===== LISTADO MARCAS ===== */
+.categoria-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.categoria-card ul li {
+  font-size: 16px;
+  padding-left: 22px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  animation: fadeUp 0.8s ease forwards;
-  opacity: 0;
+.categoria-card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #4A9194;
+  font-weight: bold;
+  font-size: 15px;
+}
 
+/* ===== BOTONES "VER MÁS" ===== */
+.btn-ver {
+  background-color: #4A9194;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-ver:hover {
+  background-color: #3D4B66;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .header-ecoclima h1 {
+    font-size: 36px;
+  }
+
+  .servicios-header p {
+    font-size: 18px;
+  }
+
+  .bloque-servicio h2 {
+    font-size: 28px;
+  }
+
+  .categoria-card {
+    padding: 24px 18px;
+  }
+
+  .categoria-card h3 {
+    font-size: 20px;
+  }
+
+  .categoria-card ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .btn-ver {
+    align-self: flex-start;
+  }
+}
+
+/* ===== CONTENEDOR GENERAL DE COMPARATIVAS ===== */
+.comparativa-wrapper {
+  margin: 200px auto;
+  max-width: 1400px;
+  padding: 0 0px;
+  display: flex;
+  gap: 30px; /* Espacio entre comparativas de AC y calefacción */
+  flex-wrap: wrap; /* Permite que bajen en pantallas pequeñas */
+}
+
+/* Cada bloque de comparativa (AC o calefacción) como columna */
+.comparativa-bloque {
+  flex: 1;
+  min-width: 500px; /* Ancho mínimo para que no se achique demasiado */
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px 30px 30px;
+}
+
+/* Título de cada bloque dentro del recuadro */
+.comparativa-bloque h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #3D4B66;
+  border-left: 6px solid #4A9194;
+  padding-left: 16px;
+}
+
+/* ===== TARJETA DE CADA MARCA ===== */
+.comparativa-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 0; /* Se elimina espacio inferior para unir tarjetas */
+  padding: 24px 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.plan-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.plan-card:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.plan-card:nth-child(3) {
-  animation-delay: 0.5s;
+.comparativa-card + .comparativa-card {
+  margin-top: 20px; /* Solo espacio entre tarjetas consecutivas */
 }
 
-.plan-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-  z-index: 2;
+.comparativa-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Imagen superior de cada plan */
-.plan-imagen {
-  width: 100%;
-  height: 350px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.plan-imagen.comfort {
-  background-image: url('/assets/plan-basico.jpg');
-}
-
-.plan-imagen.premium {
-  background-image: url('/assets/plan-avanzado.jpg');
-}
-
-.plan-imagen.ultimate {
-  background-image: url('/assets/plan-total.jpg');
-}
-
-/* Título del plan */
-.plan-card h2 {
-  font-size: 24px;
-  color: #000;
-  margin-bottom: 10px;
-}
-
-.precio {
+.comparativa-card h3 {
   font-size: 22px;
-  color: #111;
-  margin-bottom: 14px;
-}
-
-.promo {
-  background-color: #f0f0f0;
-  padding: 10px;
-  font-size: 15px;
-  color: #333;
-  border-radius: 6px;
   margin-bottom: 16px;
+  color: #fff;
+  background: #4A9194; /* Fondo del título */
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
 }
 
-/* Lista de características */
-ul {
-  text-align: left;
+/* ===== COLUMNAS PROS Y CONTRAS ===== */
+.comparativa-cols {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px; /* Espacio pequeño entre título y columnas */
+}
+
+.comparativa-cols > div {
+  flex: 1;
+  min-width: 260px;
+  margin: 0;
+}
+
+/* Pros */
+.pros {
+  background: #E6F4F3;
+  border-left: 4px solid #4A9194;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.pros h4 {
+  color: #2F3A52;
+  margin-bottom: 8px;
+}
+
+/* Contras */
+.contras {
+  background: #FDEAEA;
+  border-left: 4px solid #C94A4A;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.contras h4 {
+  color: #C94A4A;
+  margin-bottom: 8px;
+}
+
+/* Listados */
+.comparativa-cols ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0;
 }
 
-ul li {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #333;
-}
-
-/* Botón */
-.btn-elige {
-  background-color: #8418aa;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-  margin-bottom: 10px;
-}
-
-.btn-elige:hover {
-  background-color: #6c1289;
-}
-
-.cuota {
-  font-size: 14px;
+.comparativa-cols ul li {
+  margin-bottom: 6px;
+  font-size: 15px;
   color: #444;
 }
 
-/* Plan destacado */
-.destacado {
-  border: 3px solid #8418aa;
-  position: relative;
-}
-
-.plan-etiqueta {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #8418aa;
-  color: white;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 20px;
-}
-
-/* Responsive */
-@media (max-width: 1100px) {
-  .precios-planes {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .plan-card {
-    max-width: 90%;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .comparativa-wrapper {
+    flex-direction: column;
   }
 }
 
-.comparar-wrapper {
-    background-color: #e3e3e3;
-    padding: 80px 40px;
-    color: #111;
-    font-family: Arial, sans-serif;
-    margin-top: 150px;
+@media (max-width: 768px) {
+  .comparativa-bloque h2 {
+    font-size: 26px;
   }
-  
-  .comparar-wrapper h2 {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-  
-  .titulo-morado {
-    color: #8418aa;
-    font-weight: bold;
-  }
-  
-  .comparar-wrapper p {
-    text-align: center;
+  .comparativa-card h3 {
     font-size: 20px;
-    color: #333;
-    margin-bottom: 40px;
   }
-  
-  .tabla-comparativa {
-    overflow-x: auto;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  .comparativa-cols {
+    flex-direction: column;
+    gap: 12px;
   }
-  
-  .tabla-comparativa table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 18px;
-  }
-  
-  .tabla-comparativa thead th {
-    background-color: #f9f9f9;
-    color: #111;
-    font-weight: bold;
-    padding: 20px 12px;
-    text-align: center;
-    border-bottom: 2px solid #ddd;
-  }
-  
-  .tabla-comparativa thead th.morado {
-    color: #8418aa;
-  }
-  
-  .tabla-comparativa td {
-    padding: 16px 12px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .tabla-comparativa td:first-child {
-    text-align: left;
-    font-weight: 500;
-    color: #333;
-  }
-  
-  .tabla-comparativa td:empty::after {
-    content: '—';
-    color: #ccc;
-    font-weight: normal;
-  }
-  
-  .tabla-comparativa td:contains('✔') {
-    color: #8418aa;
-    font-weight: bold;
-  }
-  
-  @media (max-width: 768px) {
-    .tabla-comparativa table {
-      min-width: 700px;
-    }
-  }
+}
 
-  .tick-morado {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 25px;
-    background-color: #8418aa;
-    border-radius: 50%;
-    color: black;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 1;
-  }
-  
-  
-  
-  
-  
+/* ===== GRÁFICAS DE TENDENCIAS ===== */
+.tendencias-ventas {
+  background: #fff;
+  padding: 60px 40px;
+  margin-top: 80px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
 
-  
+.tendencias-ventas h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: #3D4B66;
+  text-align: center;
+}
 
-  
+.graficas-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
 
+.grafica-card {
+  flex: 1;
+  min-width: 590px;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
 
-  
-
-  
-  
-  
+.grafica-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #4A9194;
+}
