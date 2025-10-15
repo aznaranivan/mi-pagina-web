@@ -2,10 +2,10 @@
 
 /* Contenedor que escala TODO a 67% */
 .zoom-wrapper {
-  zoom: 0.67;              /* escala la página completa */
+  zoom: 0.67;              /* escala la página completa en escritorio */
   width: 100%;
   height: 100%;
-  overflow: visible;        /* aseguramos que no se recorte nada */
+  overflow: visible;
 }
 
 /* Ajustes de body/html */
@@ -14,6 +14,30 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;       /* elimina scroll horizontal */
-  overflow-y: auto;         /* scroll vertical normal */
+  overflow-x: hidden;       /* elimina scroll horizontal en escritorio */
+  overflow-y: auto;
+}
+
+/* MEDIA QUERIES: solo para móviles */
+@media (max-width: 768px) {
+  .zoom-wrapper {
+    zoom: 1;                /* desactiva zoom de escritorio */
+    transform: scale(0.67); /* mantiene mismo tamaño que escritorio */
+    transform-origin: top center;
+  }
+
+  html, body {
+    height: auto;           /* ajusta la altura para scroll móvil */
+    overflow-x: auto;       /* permite scroll horizontal en móvil */
+  }
+
+  /* Ajustar imágenes y videos */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body {
+    font-size: 14px;        /* fuente legible en móviles */
+  }
 }
