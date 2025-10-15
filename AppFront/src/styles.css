@@ -21,10 +21,11 @@ html, body {
 /* MEDIA QUERIES: solo para móviles */
 @media (max-width: 768px) {
   .zoom-wrapper {
-    zoom: 1;                /* desactiva zoom de escritorio */
-    transform: scale(0.67); /* mantiene mismo tamaño que escritorio */
+    zoom: 1;                /* elimina zoom de escritorio */
+    transform: scale(0.6);  /* ajusta el tamaño según la pantalla */
     transform-origin: top center;
   }
+
 
   html, body {
     height: auto;           /* ajusta la altura para scroll móvil */
