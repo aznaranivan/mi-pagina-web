@@ -26,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InvitadoAdministradorComponent } from './components/invitado-administrador/invitado-administrador.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { AtencionClienteComponent } from './components/atencion/atencion-cliente.component';
-import { EntrenamientoSaludComponent } from './components/entrenamiento-salud/entrenamiento-salud.component';
+import { BeneficiosComponent } from './components/beneficios/beneficios';
 import { RegistroComponent } from './components/precios/registro/registro.component';
 import { PagoComponent } from './components/precios/pago/pago.component';
 import { TarjetaComponent } from './components/precios/tarjeta/tarjeta.component';
@@ -82,7 +82,7 @@ import { PanasonicCalefaccionComponent } from './components/precios/equipos/cale
     InvitadoAdministradorComponent,
     NosotrosComponent,
     AtencionClienteComponent,
-    EntrenamientoSaludComponent,
+    BeneficiosComponent,
     RegistroComponent,
     PagoComponent,
     TarjetaComponent,

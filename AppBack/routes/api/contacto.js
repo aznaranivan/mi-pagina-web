@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
     // Enviar el correo
     await transporter.sendMail({
       from: `"${nombre} ${apellidos}" <${email}>`,
-      to: 'aznaranivan41@gmail.com',
+      to: 'iaznaran@hotmail.com',
       subject: `Formulario de contacto: ${asunto}`,
       html: contenido
     });

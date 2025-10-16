@@ -17,7 +17,7 @@ import { InvitadoAdministradorComponent } from './components/invitado-administra
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { PreciosComponent } from './components/precios/precios.component';
 import { AtencionClienteComponent } from "./components/atencion/atencion-cliente.component";
-import { EntrenamientoSaludComponent } from './components/entrenamiento-salud/entrenamiento-salud.component';
+import { BeneficiosComponent } from "./components/beneficios/beneficios";
 import { RegistroComponent } from './components/precios/registro/registro.component';
 import { PagoComponent } from "./components/precios/pago/pago.component";
 import { TarjetaComponent } from "./components/precios/tarjeta/tarjeta.component";
@@ -75,8 +75,8 @@ const routes: Routes = [
         { path: 'nosotros', component: NosotrosComponent },
         { path: 'precios', component: PreciosComponent },
         { path: 'atencion-cliente' , component: AtencionClienteComponent},
-        { path: 'entrenamiento-salud', component: EntrenamientoSaludComponent },
-        { path: 'registro', component: RegistroComponent },
+{ path: 'beneficios', component: BeneficiosComponent },
+            { path: 'registro', component: RegistroComponent },
         { path: 'pago', component: PagoComponent },
         { path: 'tarjeta', component: TarjetaComponent },
         { path: 'procesando', component: LoadingComponent },

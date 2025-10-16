@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-entrenamiento-salud',
-  templateUrl: './entrenamiento-salud.component.html',
+  selector: 'app-beneficios',
   standalone: false,
-  styleUrls: ['./entrenamiento-salud.component.css']
+  templateUrl: './beneficios.html',
+  styleUrls: ['./beneficios.css']
 })
-export class EntrenamientoSaludComponent {
+export class BeneficiosComponent {
   beneficios = [
     {
       titulo: 'Ahorro Energético Garantizado',
