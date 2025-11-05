@@ -1,30 +1,31 @@
+// 📦 Dependencias principales
 const express = require('express');
 const cors = require('cors');
-const path = require('path'); // 🔹 nuevo
-
+const path = require('path');
 require('dotenv').config();
-require('./config/db');
+require('./config/db'); // conexión a MongoDB
 
+// 🚀 Inicializar la app
 const app = express();
 
-// Config
+// 🧩 Middlewares globales
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Rutas API
+// 🛠️ Rutas de la API (importante que estén antes que Angular)
 app.use('/api', require('./routes/api'));
 
-// Servir los archivos estáticos desde la carpeta 'public/browser'
-app.use(express.static(path.join(__dirname, 'public', 'browser')));
+// 📂 Servir los archivos del frontend Angular
+const angularPath = path.join(__dirname, 'public', 'browser');
+app.use(express.static(angularPath));
 
-// Redirigir todas las rutas al index.html de Angular
+// ⚙️ Redirigir cualquier otra ruta al index.html de Angular
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'browser', 'index.html'));
+  res.sendFile(path.join(angularPath, 'index.html'));
 });
 
-
-// Puerto
+// 🎧 Puerto de escucha
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);

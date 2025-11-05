@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
-const Contacto = require('../../models/contacto.model'); // 👈 Importar el modelo
+const Contacto = require('../../models/contacto.model'); // Modelo de Mongoose
 
 router.post('/', async (req, res) => {
   const {
@@ -15,6 +15,7 @@ router.post('/', async (req, res) => {
     mensaje
   } = req.body;
 
+  // Validaciones básicas
   if (!nombre || !apellidos || !movil || !email || !confirmarEmail || !tipoConsulta || !asunto || !mensaje) {
     return res.status(400).json({ error: 'Faltan campos obligatorios' });
   }
@@ -23,14 +24,7 @@ router.post('/', async (req, res) => {
     return res.status(400).json({ error: 'Los emails no coinciden' });
   }
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS
-    }
-  });
-
+  // Contenido del correo
   const contenido = `
     <h3>Nuevo mensaje de atención al cliente</h3>
     <p><strong>Nombre:</strong> ${nombre} ${apellidos}</p>
@@ -41,31 +35,46 @@ router.post('/', async (req, res) => {
     <p><strong>Mensaje:</strong><br>${mensaje}</p>
   `;
 
-  try {
-    // Enviar el correo
-    await transporter.sendMail({
-      from: `"${nombre} ${apellidos}" <${email}>`,
-      to: 'iaznaran@hotmail.com',
-      subject: `Formulario de contacto: ${asunto}`,
-      html: contenido
-    });
+  // Configurar transporter de Gmail
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER, // tu Gmail
+      pass: process.env.GMAIL_PASS  // contraseña o app password
+    }
+  });
 
-    // Guardar en base de datos
-    await Contacto.create({
-      nombre,
-      apellidos,
-      movil,
-      email,
-      tipoConsulta,
-      asunto,
-      mensaje
-    });
+  // Enviar correo
+  transporter.sendMail({
+    from: `"Aznaran Web" <${process.env.GMAIL_USER}>`, // tu Gmail
+    to: 'serviciosgc@hotmail.com',                     // correo de destino
+    replyTo: email,                                   // responde al usuario
+    subject: `Formulario de contacto: ${asunto}`,
+    html: contenido
+  }, (err, info) => {
+    if (err) {
+      console.error("Error enviando correo:", err);
+      return res.status(500).json({ error: 'Error al enviar el correo' });
+    } else {
+      console.log("Correo enviado:", info);
 
-    res.json({ message: 'Correo enviado y formulario guardado correctamente' });
-  } catch (error) {
-    console.error('Error al enviar correo o guardar en DB:', error);
-    res.status(500).json({ error: 'Error al enviar el correo o guardar en base de datos' });
-  }
+      // Guardar en base de datos solo si el correo se envió
+      Contacto.create({
+        nombre,
+        apellidos,
+        movil,
+        email,
+        tipoConsulta,
+        asunto,
+        mensaje
+      }).then(() => {
+        res.json({ message: 'Correo enviado y formulario guardado correctamente' });
+      }).catch(dbErr => {
+        console.error("Error guardando en DB:", dbErr);
+        res.status(500).json({ error: 'Error al guardar en la base de datos' });
+      });
+    }
+  });
 });
 
 module.exports = router;
