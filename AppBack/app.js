@@ -13,19 +13,25 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// 🛠️ Rutas de la API (importante que estén antes que Angular)
+// 🛠️ Rutas de la API
 app.use('/api', require('./routes/api'));
 
-// 📂 Servir los archivos del frontend Angular
-const angularPath = path.join(__dirname, 'public', 'browser');
+// 🧪 Endpoint de prueba rápido
+app.get('/api/test', (req, res) => {
+  res.json({ ok: true });
+});
+
+// 📂 Servir Angular
+const angularPath = path.join(__dirname, 'public/browser');
 app.use(express.static(angularPath));
 
-// ⚙️ Redirigir cualquier otra ruta al index.html de Angular
+// ⚙️ Catch-all para Angular
 app.get('*', (req, res) => {
   res.sendFile(path.join(angularPath, 'index.html'));
 });
 
-// 🎧 Puerto de escucha
+
+// 🎧 Puerto de escucha (Render asigna el puerto automáticamente)
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
