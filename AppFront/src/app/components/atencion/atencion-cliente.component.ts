@@ -36,7 +36,7 @@ export class AtencionClienteComponent {
       mensaje: this.mensajeTexto
     };
 
-    this.http.post('http://localhost:3000/api/contacto', datosFormulario).subscribe({
+    this.http.post('https://mi-backend.onrender.com/api/contacto', datosFormulario).subscribe({
       next: () => {
         this.exito = true;
         setTimeout(() => this.exito = false, 3000);
