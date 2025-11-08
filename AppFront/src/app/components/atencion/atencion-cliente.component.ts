@@ -36,17 +36,18 @@ export class AtencionClienteComponent {
       mensaje: this.mensajeTexto
     };
 
-    this.http.post('https://mi-backend.onrender.com/api/contacto', datosFormulario).subscribe({
-      next: () => {
-        this.exito = true;
-        setTimeout(() => this.exito = false, 3000);
-        formulario.resetForm();
-        this.email = '';
-        this.confirmarEmail = '';
-        this.mensajeTexto = '';
-      },
-      error: err => console.error('Error al enviar formulario', err)
-    });
+    this.http.post('https://eco-clima21.com/api/contacto', datosFormulario).subscribe({
+  next: () => {
+    this.exito = true;
+    setTimeout(() => this.exito = false, 3000);
+    formulario.resetForm();
+    this.email = '';
+    this.confirmarEmail = '';
+    this.mensajeTexto = '';
+  },
+  error: err => console.error('Error al enviar formulario', err)
+});
+
   }
 
   soloNumeros(event: any) {
