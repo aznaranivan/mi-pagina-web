@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
 
     // ✅ Enviar correo con Resend
     const { data, error } = await resend.emails.send({
-      from: 'Aznaran Web <onboarding@resend.dev>', // puedes personalizar esto
+from: 'Aznaran Web <no-reply@eco-clima21.com>',
       to: 'serviciosgc@hotmail.com',
       reply_to: email,
       subject: `Formulario de contacto: ${asunto}`,
