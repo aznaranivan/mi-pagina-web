@@ -1,80 +1,72 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
-const Contacto = require('../../models/contacto.model'); // Modelo de Mongoose
+const Contacto = require('../../models/contacto.model');
 
 router.post('/', async (req, res) => {
-  const {
-    nombre,
-    apellidos,
-    movil,
-    email,
-    confirmarEmail,
-    tipoConsulta,
-    asunto,
-    mensaje
-  } = req.body;
+  console.log("📬 Llega un POST a /api/contacto:", req.body);
 
-  // Validaciones básicas
-  if (!nombre || !apellidos || !movil || !email || !confirmarEmail || !tipoConsulta || !asunto || !mensaje) {
-    return res.status(400).json({ error: 'Faltan campos obligatorios' });
-  }
+  try {
+    const { nombre, apellidos, movil, email, confirmarEmail, tipoConsulta, asunto, mensaje } = req.body;
 
-  if (email !== confirmarEmail) {
-    return res.status(400).json({ error: 'Los emails no coinciden' });
-  }
-
-  // Contenido del correo
-  const contenido = `
-    <h3>Nuevo mensaje de atención al cliente</h3>
-    <p><strong>Nombre:</strong> ${nombre} ${apellidos}</p>
-    <p><strong>Móvil:</strong> ${movil}</p>
-    <p><strong>Email:</strong> ${email}</p>
-    <p><strong>Tipo de Consulta:</strong> ${tipoConsulta}</p>
-    <p><strong>Asunto:</strong> ${asunto}</p>
-    <p><strong>Mensaje:</strong><br>${mensaje}</p>
-  `;
-
-  // Configurar transporter de Gmail
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.GMAIL_USER, // tu Gmail
-      pass: process.env.GMAIL_PASS  // contraseña o app password
+    // Validaciones
+    if (!nombre || !apellidos || !movil || !email || !confirmarEmail || !tipoConsulta || !asunto || !mensaje) {
+      console.log("❌ Faltan campos:", req.body);
+      return res.status(400).json({ error: 'Faltan campos obligatorios' });
     }
-  });
 
-  // Enviar correo
-  transporter.sendMail({
-    from: `"Aznaran Web" <${process.env.GMAIL_USER}>`, // tu Gmail
-    to: 'serviciosgc@hotmail.com',                     // correo de destino
-    replyTo: email,                                   // responde al usuario
-    subject: `Formulario de contacto: ${asunto}`,
-    html: contenido
-  }, (err, info) => {
-    if (err) {
-      console.error("Error enviando correo:", err);
-      return res.status(500).json({ error: 'Error al enviar el correo' });
-    } else {
-      console.log("Correo enviado:", info);
+    if (email !== confirmarEmail) {
+      console.log("❌ Emails no coinciden:", email, confirmarEmail);
+      return res.status(400).json({ error: 'Los emails no coinciden' });
+    }
 
-      // Guardar en base de datos solo si el correo se envió
-      Contacto.create({
-        nombre,
-        apellidos,
-        movil,
-        email,
-        tipoConsulta,
-        asunto,
-        mensaje
-      }).then(() => {
+    // Configurar transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS
+      }
+    });
+
+    const contenido = `
+      <h3>Nuevo mensaje de atención al cliente</h3>
+      <p><strong>Nombre:</strong> ${nombre} ${apellidos}</p>
+      <p><strong>Móvil:</strong> ${movil}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Tipo de Consulta:</strong> ${tipoConsulta}</p>
+      <p><strong>Asunto:</strong> ${asunto}</p>
+      <p><strong>Mensaje:</strong><br>${mensaje}</p>
+    `;
+
+    transporter.sendMail({
+      from: `"Aznaran Web" <${process.env.GMAIL_USER}>`,
+      to: 'serviciosgc@hotmail.com',
+      replyTo: email,
+      subject: `Formulario de contacto: ${asunto}`,
+      html: contenido
+    }, async (err, info) => {
+      if (err) {
+        console.error("❌ Error enviando correo:", err);
+        return res.status(500).json({ error: 'Error al enviar el correo', details: err.message });
+      }
+
+      console.log("✅ Correo enviado:", info.response);
+
+      try {
+        await Contacto.create({ nombre, apellidos, movil, email, tipoConsulta, asunto, mensaje });
+        console.log("✅ Formulario guardado en DB");
         res.json({ message: 'Correo enviado y formulario guardado correctamente' });
-      }).catch(dbErr => {
-        console.error("Error guardando en DB:", dbErr);
-        res.status(500).json({ error: 'Error al guardar en la base de datos' });
-      });
-    }
-  });
+      } catch (dbErr) {
+        console.error("❌ Error guardando en DB:", dbErr);
+        res.status(500).json({ error: 'Error al guardar en la base de datos', details: dbErr.message });
+      }
+    });
+
+  } catch (err) {
+    console.error("❌ Error inesperado:", err);
+    res.status(500).json({ error: 'Error interno en el servidor', details: err.message });
+  }
 });
 
 module.exports = router;
