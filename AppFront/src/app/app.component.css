@@ -421,7 +421,7 @@ app-menu {
   max-width: 100%;
   border-radius: 16px;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-  margin-bottom: -560px; /* baja un poco la imagen para que toque la sección siguiente */
+  margin-bottom: -660px; /* baja un poco la imagen para que toque la sección siguiente */
 }
 
 .promo-imagen {
@@ -857,3 +857,312 @@ html, body {
   border: 2px solid white;
   border-radius: 50%;
 }
+
+/* ====== Ajustes para el texto dentro del recuadro (pegar en el CSS, reemplazar reglas anteriores) ====== */
+
+.benefits-intro {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centra la caja interna */
+  background: transparent;  /* mantiene el fondo blanco de la sección padre */
+  padding: 24px 16px 10px;  /* espacio interno pequeño para que no suba mucho */
+  box-sizing: border-box;
+  margin: 0 auto 30px;      /* separación normal hacia abajo */
+  clear: both;
+  z-index: 2;
+  margin-top: 150px;
+  margin-bottom: -150px;
+}
+
+.benefits-intro-inner {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0;
+  text-align: left;
+  background: #2f3a52;
+  padding: 38px 34px;
+  box-shadow: 0 20px 100px #2F3A52;
+  border-radius: 20px;
+  display: block;       /* aseguramos que sea bloque */
+  overflow: hidden;     /* para que englobe todo el contenido */
+}
+
+.benefits-subtitle {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  margin-top: 10px;
+  line-height: 1.25;
+  margin-bottom: 16px; /* eliminar márgenes negativos */
+}
+
+
+/* Títulos y textos — tamaños contenidos para que no aumenten demasiado la altura */
+.benefits-title1 {
+  font-size: 40px;          /* alto pero contenido */
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  margin: 0 0 14px;
+  line-height: 1.08;
+}
+
+.benefits-text1 {
+  font-size: 23px;        /* tamaño legible, no enorme */
+  font-weight: 400;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  line-height: 1.7;
+  max-width: 1500px;
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+/* Responsive: reduce proporcionalmente en pantallas pequeñas */
+@media (max-width: 1000px) {
+  .benefits-intro-inner { padding: 22px; }
+  .benefits-title1 { font-size: 26px; }
+  .benefits-text1 { font-size: 15px; }
+  .benefits-subtitle { font-size: 16px; }
+}
+
+@media (max-width: 600px) {
+  .benefits-intro { padding: 18px 10px 8px; }
+  .benefits-intro-inner { padding: 16px; }
+  .benefits-title1 { font-size: 20px; }
+  .benefits-text1 { font-size: 14px; }
+  .benefits-subtitle { font-size: 15px; }
+}
+
+/* ====== SECCIÓN FAQ CLIMATIZACIÓN ====== */
+.faq-climatizacion .climatizacion-faq-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  border-top: 4px solid #2F3A52;
+  clear: both;
+  position: relative;
+  margin-top: -10px;
+  margin-bottom: 90px;
+}
+
+/* Contenedor */
+.faq-climatizacion .climatizacion-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  color: #222;
+  font-family: 'Playfair Display', serif;
+  text-align: left;
+  padding: 12px 32px;
+}
+
+/* ====== TITULARES ====== */
+.faq-climatizacion .climatizacion-h2 {
+  font-size: 44px;
+  font-weight: 800;
+  color: #2F3A52;
+  margin: 0 0 18px;
+  line-height: 1.15;
+  letter-spacing: 0.6px;
+  position: relative;
+}
+
+/* Línea azul bajo el título H2 */
+.faq-climatizacion .climatizacion-h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #4A9194;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+/* Subtitulares */
+.faq-climatizacion .climatizacion-h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2F3A52;
+  margin: 32px 0 12px;
+  letter-spacing: 0.4px;
+  position: relative;
+}
+
+/* Decoración fina bajo h3 */
+.faq-climatizacion .climatizacion-h3::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #4A9194;
+  margin-top: 6px;
+  border-radius: 4px;
+}
+
+/* ====== ACORDEÓN / DESPLEGABLE ====== */
+.faq-climatizacion .climatizacion-summary {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  color: #2F3A52;
+  font-weight: 700;
+  font-size: 26px;
+  transition: color 0.2s ease;
+}
+
+/* Icono +/− */
+.faq-climatizacion .climatizacion-summary__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: rgba(47,58,82,0.05);
+  color: #2F3A52;
+  font-weight: 800;
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+/* Hover suave */
+.faq-climatizacion .climatizacion-summary:hover {
+  color: #4A9194;
+}
+
+/* Content invisible por defecto */
+.faq-climatizacion .climatizacion-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin 0.25s ease;
+  margin-bottom: 0;
+}
+
+/* Cuando está abierto */
+.faq-climatizacion .climatizacion-content.open {
+  max-height: 1200px;
+  opacity: 1;
+  margin-bottom: 22px;
+  transition: max-height 0.6s cubic-bezier(.2,.8,.2,1), opacity 0.25s ease;
+}
+
+/* Padding interior del contenido */
+.faq-climatizacion .climatizacion-content-inner {
+  padding: 8px 16px 16px 40px;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.7;
+  font-weight: 400;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ====== PÁRRAFOS ====== */
+.faq-climatizacion .climatizacion-p {
+  font-size: 22px;
+  color: #333;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+
+/* ====== LISTAS CON TICKS ====== */
+.faq-climatizacion .climatizacion-content-inner ul,
+.faq-climatizacion .climatizacion-content-inner ol {
+  list-style: none !important;
+  margin: 14px 0 28px 0 !important;
+  padding-left: 36px !important; /* espacio desde tick al texto */
+  position: relative !important;
+}
+
+.faq-climatizacion .climatizacion-content-inner ul li,
+.faq-climatizacion .climatizacion-content-inner ol li {
+  margin-bottom: 12px !important;
+  padding-left: 0 !important;
+  position: relative !important;
+  min-height: 24px !important;
+}
+
+/* Cheque ✔ dentro de caja/círculo sutil */
+.faq-climatizacion .climatizacion-content-inner ul li::before,
+.faq-climatizacion .climatizacion-content-inner ol li::before {
+  content: "✔" !important;
+  position: absolute !important;
+  left: -30px !important; /* ajusta aquí si está muy pegado o muy lejos */
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 6px !important;
+  background: rgba(74,145,148,0.10) !important;
+  color: #4A9194 !important;
+  font-weight: 800 !important;
+  font-size: 17px !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02) !important;
+}
+
+/* ====== TARJETA SUTIL EN DESKTOP ====== */
+@media (min-width: 1200px) {
+  .faq-climatizacion .climatizacion-container {
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 12px 38px rgba(47,58,82,0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1000px) {
+  .faq-climatizacion .climatizacion-h2 { font-size: 30px; }
+  .faq-climatizacion .climatizacion-h3 { font-size: 22px; }
+  .faq-climatizacion .climatizacion-summary { font-size: 22px; }
+  .faq-climatizacion .climatizacion-content-inner { font-size: 16px; padding-left: 30px; }
+  .faq-climatizacion .climatizacion-p { font-size: 16px; }
+}
+
+@media (max-width: 600px) {
+  .faq-climatizacion .climatizacion-faq-section { padding: 42px 16px; }
+  .faq-climatizacion .climatizacion-h2 { font-size: 24px; }
+  .faq-climatizacion .climatizacion-h3 { font-size: 19px; }
+  .faq-climatizacion .climatizacion-summary { font-size: 19px; }
+  .faq-climatizacion .climatizacion-content-inner { padding-left: 18px; font-size: 15px; }
+  .faq-climatizacion .climatizacion-p { font-size: 15px; }
+  .faq-climatizacion .climatizacion-content-inner ul li::before,
+  .faq-climatizacion .climatizacion-content-inner ol li::before {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* ACORDEÓN ITEMS */
+.faq-climatizacion .climatizacion-item {
+  border-bottom: 1px solid rgba(47,58,82,0.08);
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+}
+
+.faq-climatizacion .climatizacion-item:last-of-type {
+  border-bottom: none;
+}
+
+/* Foco visible para teclado */
+.faq-climatizacion .climatizacion-summary:focus-visible span.climatizacion-summary__icon {
+  transform: scale(1.05);
+  background: rgba(74,145,148,0.18);
+  color: #2F3A52;
+}
+

@@ -16,6 +16,25 @@
   letter-spacing: 2px;
 }
 
+.titulo1 {
+  text-align: center;
+  font-size: 50px; /* Más grande */
+  color: #2F3A52;
+  font-weight: 800;
+  margin-bottom: 70px; /* Más espacio con las tarjetas */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.titulo2 {
+  text-align: center;
+  font-size: 50px; /* Más grande */
+  color: #2F3A52;
+  font-weight: 800;
+  margin-bottom: 70px; /* Más espacio con las tarjetas */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 .secciones-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Tarjetas más anchas */

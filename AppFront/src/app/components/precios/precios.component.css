@@ -176,7 +176,7 @@
 
 /* ===== CONTENEDOR GENERAL DE COMPARATIVAS ===== */
 .comparativa-wrapper {
-  margin: 200px auto;
+  margin: -60px auto;
   max-width: 1400px;
   padding: 0 0px;
   display: flex;
@@ -308,8 +308,9 @@
 .tendencias-ventas {
   background: #fff;
   padding: 60px 40px;
-  margin-top: 80px;
+  margin-top: -60px; /* aumentamos la separación desde la sección anterior */
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  overflow: visible; /* asegura que los gráficos no se corten */
 }
 
 .tendencias-ventas h2 {
@@ -340,4 +341,42 @@
   margin-bottom: 20px;
   font-size: 22px;
   color: #4A9194;
+}
+
+/* ===== CABECERA GENERAL COMPARATIVAS ===== */
+/* ===== CABECERA GENERAL COMPARATIVAS RECTANGULAR ===== */
+.header-comparativas {
+  background: linear-gradient(135deg, #4A9194, #3D4B66);
+  color: #fff;
+  padding: 60px 40px;
+  text-align: center;
+  margin-top: 130px;
+  margin-bottom: 60px; /* separación con los bloques */
+  border-radius: 0; /* sin curvas */
+}
+
+.header-comparativas h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header-comparativas1 {
+  background: linear-gradient(135deg, #4A9194, #3D4B66);
+  color: #fff;
+  padding: 60px 40px;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 60px; /* separación con los bloques */
+  border-radius: 0; /* sin curvas */
+}
+
+.header-comparativas1 h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

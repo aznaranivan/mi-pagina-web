@@ -115,6 +115,26 @@
       </div>
 
     </div>
+    <div class="benefits-intro">
+      <div class="benefits-intro-inner">
+        <h2 class="benefits-title1">
+          <strong>Instalación de climatización eficiente con apoyo de energía solar y asesoramiento experto</strong>
+        </h2>
+        <br>
+
+        <p class="benefits-text1">
+          Realizamos la instalación de sistemas de aire acondicionado y climatización adaptados a cada espacio,
+          ofreciendo soluciones de <strong>frío y calor</strong> diseñadas para lograr mayor confort y menor consumo energético.
+          Combinamos <strong>tecnología eficiente</strong> con opciones de energía solar como soporte para maximizar el ahorro,
+          la sostenibilidad y la autonomía energética. Ideal para viviendas, negocios e industrias que buscan optimizar
+          su eficiencia desde el primer día.
+        </p>
+        <br>
+        <h3 class="benefits-subtitle">
+          <strong>Climatización para el hogar y empresas con máximo rendimiento y ahorro </strong>
+        </h3>
+      </div>
+    </div>
   </section>
 </ng-container>
 
@@ -143,6 +163,124 @@
     </div>
   </section>
 </ng-container>
+
+<div class="faq-climatizacion" *ngIf="esInicio">
+  <section class="climatizacion-faq-section" aria-labelledby="climatizacion-faq-title">
+    <div class="climatizacion-container">
+
+      <h2 id="climatizacion-faq-title" class="climatizacion-h2">
+        Sección de preguntas frecuentes
+      </h2>
+
+      <div class="climatizacion-accordion">
+
+        <!-- Item 1 -->
+        <div class="climatizacion-item">
+          <button class="climatizacion-summary" type="button" (click)="toggleFaq(0)">
+            <span class="climatizacion-summary__icon" aria-hidden="true">
+              {{ isFaqOpen(0) ? '−' : '+' }}
+            </span>
+            <span class="climatizacion-summary--h2">
+              ¿Qué incluye el servicio de instalación de climatización eficiente?
+            </span>
+          </button>
+          <div class="climatizacion-content" [class.open]="isFaqOpen(0)">
+            <div class="climatizacion-content-inner">
+              <p class="climatizacion-p">
+                Nuestro servicio de instalación de climatización incluye la <strong>evaluación técnica del espacio</strong>,
+                propuesta personalizada e instalación profesional de sistemas de <strong>aire acondicionado</strong>,
+                <strong>calefacción</strong> y <strong>soluciones híbridas de frío y calor</strong>.
+                También ofrecemos asesoramiento sobre <strong>subvenciones, ayudas energéticas</strong> y
+                trámites administrativos, sin coste adicional.
+              </p>
+              <p class="climatizacion-p">
+                Este servicio está dirigido a <strong>particulares, empresas y comunidades de propietarios</strong>
+                que buscan reducir el consumo, aumentar el confort y mejorar su eficiencia energética.
+                Garantizamos un proceso integral: <strong>desde la primera visita técnica hasta la puesta en marcha</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="climatizacion-item">
+          <button class="climatizacion-summary" type="button" (click)="toggleFaq(1)">
+            <span class="climatizacion-summary__icon" aria-hidden="true">
+              {{ isFaqOpen(1) ? '−' : '+' }}
+            </span>
+            <span class="climatizacion-summary--h3">
+              ¿Qué tipo de equipos instalamos?
+            </span>
+          </button>
+          <div class="climatizacion-content" [class.open]="isFaqOpen(1)">
+            <div class="climatizacion-content-inner">
+              <p class="climatizacion-p">
+                Seleccionamos el equipo más adecuado según consumo, tamaño del espacio, aislamiento térmico y presupuesto.
+                También ofrecemos servicio de <strong>mantenimiento y monitorización del consumo</strong>,
+                para garantizar el máximo rendimiento todo el año.
+              </p>
+              <ul class="climatizacion-list">
+                <li>Sistemas <strong>inverter</strong> de bajo consumo</li>
+                <li>Equipos <strong>bomba de calor</strong> frío/calor</li>
+                <li>Instalaciones <strong>aerotermia</strong> y <strong>apoyo solar</strong> como soporte energético</li>
+                <li>Sistemas <strong>split, conductos y VRV</strong> para entornos empresariales</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="climatizacion-item">
+          <button class="climatizacion-summary" type="button" (click)="toggleFaq(2)">
+            <span class="climatizacion-summary__icon" aria-hidden="true">
+              {{ isFaqOpen(2) ? '−' : '+' }}
+            </span>
+            <span class="climatizacion-summary--h3">
+              Coste aproximado de instalación
+            </span>
+          </button>
+          <div class="climatizacion-content" [class.open]="isFaqOpen(2)">
+            <div class="climatizacion-content-inner">
+              <p class="climatizacion-p">
+                La instalación suele oscilar entre <strong>3.500 € y 7.000 €</strong>, dependiendo del tipo de equipo,
+                potencia y características del inmueble. Cada presupuesto es <strong>personalizado tras visita técnica</strong>.
+                Incluye instalación, conexión y asesoría en trámites legales y ayudas disponibles.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="climatizacion-item">
+          <button class="climatizacion-summary" type="button" (click)="toggleFaq(3)">
+            <span class="climatizacion-summary__icon" aria-hidden="true">
+              {{ isFaqOpen(3) ? '−' : '+' }}
+            </span>
+            <span class="climatizacion-summary--h3">
+              Zonas donde trabajamos
+            </span>
+          </button>
+          <div class="climatizacion-content" [class.open]="isFaqOpen(3)">
+            <div class="climatizacion-content-inner">
+              <p class="climatizacion-p">
+                Ofrecemos servicio en <strong>Madrid y toda la Comunidad de Madrid</strong>,
+                tanto para hogares como empresas. Realizamos <strong>visitas técnicas sin compromiso</strong>
+                para estudiar la mejor solución de frío, calor y eficiencia energética.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</div>
+
+
+
+
+
 
     
 

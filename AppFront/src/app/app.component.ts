@@ -46,9 +46,12 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.cargarUsuario();
-  }
+ // Dentro de AppComponent
+ngOnInit(): void {
+  this.cargarUsuario();
+
+}
+
 
   cargarUsuario() {
     const datos = localStorage.getItem('usuarioLogueado');
@@ -158,6 +161,17 @@ confirmarUnete(opcion: 'si' | 'no') {
   }
 }
 
+/* ---------- FAQ: datos y control del acordeón ---------- */
+// ---------- FAQ: datos y control del acordeón ----------
+openFaqIndex: number | null = null;
+
+toggleFaq(index: number) {
+  this.openFaqIndex = this.openFaqIndex === index ? null : index;
+}
+
+isFaqOpen(index: number): boolean {
+  return this.openFaqIndex === index;
+}
 
 
 }

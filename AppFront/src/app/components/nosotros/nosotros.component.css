@@ -136,11 +136,11 @@
 }
 
 .nosotros-bloque::before {
-  left: 90px;
+  left: 70px;
 }
 
 .nosotros-bloque::after {
-  right: 90px;
+  right: 70px;
 }
 
 .nosotros-bloque.gris {
