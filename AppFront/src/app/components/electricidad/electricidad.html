@@ -1,0 +1,60 @@
+<main class="elec-global">
+
+  <div class="elec-top-space"></div>
+
+  <!-- HERO -->
+  <section class="elec-hero">
+    <h1>{{ empresa.nombre }}</h1>
+    <p>{{ empresa.subtitulo }}</p>
+    <p>{{ empresa.descripcion }}</p>
+
+    <ul class="badges">
+      <li *ngFor="let d of empresa.datos">{{ d }}</li>
+    </ul>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="elec-section">
+    <h2>Servicios profesionales</h2>
+    <div class="elec-grid">
+      <div class="elec-card wide" *ngFor="let s of servicios; let i = index" [ngClass]="{'tall': i % 2 === 0}">
+        <img [src]="s.imagen" [alt]="s.titulo">
+        <h3>{{ s.titulo }}</h3>
+        <p>{{ s.descripcion }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="elec-section">
+    <h2>Proyectos recientes</h2>
+    <div class="elec-grid">
+      <div class="elec-card" *ngFor="let p of proyectos; let i = index" [ngClass]="{'tall': i % 2 === 0}">
+        <img [src]="p.imagen" [alt]="p.titulo">
+        <h3>{{ p.titulo }}</h3>
+        <p><strong>{{ p.ubicacion }}</strong></p>
+        <p>{{ p.resumen }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICACIONES -->
+  <section class="elec-section">
+    <h2>Certificaciones y autorizaciones</h2>
+    <ul>
+      <li *ngFor="let c of certificaciones">{{ c.nombre }}</li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+<!-- CTA -->
+<section class="elec-cta">
+  <p>{{ contacto.texto }}</p>
+
+  <button routerLink="/atencion-cliente">
+    {{ contacto.boton }}
+  </button>
+</section>
+
+
+</main>

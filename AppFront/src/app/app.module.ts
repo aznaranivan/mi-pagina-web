@@ -57,7 +57,7 @@ import { FerroliComponent } from './components/precios/equipos/calefaccion/ferro
 import { DaikinCalefaccionComponent } from './components/precios/equipos/calefaccion/daikin/daikin.component';
 import { MitsubishiCalefaccionComponent } from './components/precios/equipos/calefaccion/mitsubishi/mitsubishi.component';
 import { PanasonicCalefaccionComponent } from './components/precios/equipos/calefaccion/panasonic/panasonic.component';
-
+import { ElectricidadComponent } from './components/electricidad/electricidad';
 
 
 
@@ -74,6 +74,7 @@ import { PanasonicCalefaccionComponent } from './components/precios/equipos/cale
     RegisterComponent,
     LoginComponent,
     MenuComponent,
+    ElectricidadComponent,
     InformacionUsuarioComponent,
     AltaComponent,
     DietaDefinicionComponent,

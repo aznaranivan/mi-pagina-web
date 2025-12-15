@@ -47,10 +47,7 @@ import { FerroliComponent } from './components/precios/equipos/calefaccion/ferro
 import { DaikinCalefaccionComponent } from './components/precios/equipos/calefaccion/daikin/daikin.component';
 import { MitsubishiCalefaccionComponent } from './components/precios/equipos/calefaccion/mitsubishi/mitsubishi.component';
 import { PanasonicCalefaccionComponent } from './components/precios/equipos/calefaccion/panasonic/panasonic.component';
-
-
-
-
+import { ElectricidadComponent } from "./components/electricidad/electricidad";
 
 
 
@@ -106,6 +103,7 @@ const routes: Routes = [
 { path: 'calefaccion/bdr', component: BdrComponent },
 { path: 'calefaccion/saunier', component: SaunierComponent },
 { path: 'calefaccion/ferroli', component: FerroliComponent },
+{ path: 'electricidad', component: ElectricidadComponent}
 
         
 

@@ -12,7 +12,7 @@
 
 <form #form="ngForm" (ngSubmit)="enviarFormulario(form)" class="formulario-contacto">
 <div class="header-atencion-blanco2">
-  <h1>Contacta con nuestra empresa de energía renovable y resuelve tus dudas sobre climatización, aerotermia o instalaciones</h1>
+  <h1>Contacta con nuestra empresa de energía renovable y resuelve tus dudas sobre climatización, aerotermia, instalaciones o electricidad</h1>
 </div>
   <!-- Nombre -->
   <div class="campo">
@@ -78,7 +78,7 @@
   <option value="Mantenimiento">Mantenimiento y Revisiones</option>
   <option value="EficienciaEnergetica">Eficiencia Energética / Ahorro</option>
   <option value="EnergiasRenovables">Energías Renovables (Solar / Aerotermia)</option>
-  <option value="Repuestos">Repuestos y Accesorios</option>
+  <option value="Electricidad">Electricidad e instalación</option>
   <option value="Otros">Otros</option>
 </select>
     <div *ngIf="tipoConsulta.invalid && tipoConsulta.touched" class="mensaje-error">
