@@ -1113,7 +1113,7 @@ html, body {
   box-shadow: 0 1px 0 rgba(0,0,0,0.02) !important;
 }
 
-/* ====== TARJETA SUTIL EN DESKTOP ====== */
+/* =================== TARJETA SUTIL EN DESKTOP =================== */
 @media (min-width: 1200px) {
   .faq-climatizacion .climatizacion-container {
     background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
@@ -1122,10 +1122,46 @@ html, body {
     box-shadow: 0 12px 38px rgba(47,58,82,0.06);
     border: 1px solid rgba(0,0,0,0.04);
   }
+
+  /* Mantener layout general de secciones grandes */
+  .fitnesspro-benefits,
+  .promo-anuncio,
+  .plan-prueba-section,
+  .faq-climatizacion .climatizacion-container {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 1000px) {
+/* =================== RESPONSIVE TABLET =================== */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .promo-contenido, .plan-prueba-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .benefit-image { height: 240px; }
+
+  .promo-titulo { font-size: 44px; }
+  .promo-subtitulo { font-size: 28px; }
+  .promo-detalle { font-size: 16px; }
+
+  .plan-prueba-imagen img {
+    width: 100%;
+    height: auto;
+  }
+
+  .plan-prueba-texto { text-align: center; }
+
   .faq-climatizacion .climatizacion-h2 { font-size: 30px; }
   .faq-climatizacion .climatizacion-h3 { font-size: 22px; }
   .faq-climatizacion .climatizacion-summary { font-size: 22px; }
@@ -1133,7 +1169,64 @@ html, body {
   .faq-climatizacion .climatizacion-p { font-size: 16px; }
 }
 
-@media (max-width: 600px) {
+/* =================== RESPONSIVE MÓVIL =================== */
+@media (max-width: 767px) {
+  html, body {
+    font-size: 16px;
+    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 16px;
+  }
+
+  .logo { width: 110px; height: auto; }
+  .nav-links { flex-direction: column; gap: 10px; padding: 10px 0; }
+  .nav-links a { font-size: 16px; padding: 12px 16px; }
+
+  button, .join-button, .boton-principal, .boton-secundario {
+    font-size: 16px;
+    padding: 14px 18px;
+    min-height: 44px;
+  }
+
+  .container, .promo-anuncio, .fitnesspro-benefits, .plan-prueba-section {
+    padding: 40px 16px !important;
+  }
+
+  .promo-contenido, .plan-prueba-content {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .promo-titulo { font-size: 30px; }
+  .promo-subtitulo { font-size: 22px; }
+  .promo-detalle { font-size: 16px; text-align: left; }
+
+  .promo-imagen img, .plan-prueba-imagen img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .benefit-image { height: auto; }
+
+  .plan-prueba-texto { text-align: center; }
+
+  .footer-texto { font-size: 18px; }
+  .footer-icons { gap: 24px; }
+
+  /* FAQ ajustado */
   .faq-climatizacion .climatizacion-faq-section { padding: 42px 16px; }
   .faq-climatizacion .climatizacion-h2 { font-size: 24px; }
   .faq-climatizacion .climatizacion-h3 { font-size: 19px; }
@@ -1148,7 +1241,7 @@ html, body {
   }
 }
 
-/* ACORDEÓN ITEMS */
+/* =================== ACORDEÓN ITEMS =================== */
 .faq-climatizacion .climatizacion-item {
   border-bottom: 1px solid rgba(47,58,82,0.08);
   padding-bottom: 14px;
@@ -1164,133 +1257,4 @@ html, body {
   transform: scale(1.05);
   background: rgba(74,145,148,0.18);
   color: #2F3A52;
-}
-
-/* =====================================================
-   MOBILE REAL (NO ESCALADO) – SEO FRIENDLY
-   ===================================================== */
-@media (max-width: 768px) {
-
-  body {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  /* ===== HEADER ===== */
-  .header {
-    height: auto;
-    padding: 12px 16px;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    width: 110px;
-    height: auto;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  .nav-links a {
-    font-size: 16px;
-    padding: 12px 16px;
-  }
-
-  /* ===== BOTONES (tamaño táctil Google) ===== */
-  button,
-  .join-button,
-  .boton-principal,
-  .boton-secundario {
-    font-size: 16px;
-    padding: 14px 18px;
-    min-height: 44px;
-  }
-
-  /* ===== CONTENEDORES ===== */
-  .container,
-  .promo-anuncio,
-  .fitnesspro-benefits,
-  .plan-prueba-section {
-    padding: 40px 16px !important;
-  }
-
-  /* ===== PROMO ===== */
-  .promo-contenido {
-    flex-direction: column;
-    gap: 32px;
-    text-align: center;
-  }
-
-  .promo-titulo {
-    font-size: 30px;
-  }
-
-  .promo-subtitulo {
-    font-size: 22px;
-  }
-
-  .promo-detalle {
-    font-size: 16px;
-    text-align: left;
-  }
-
-  .promo-imagen img {
-    width: 100%;
-    margin-bottom: 0;
-  }
-
-  /* ===== BENEFITS GRID ===== */
-  .benefits-grid {
-    grid-template-columns: 1fr !important;
-    gap: 24px;
-  }
-
-  .benefit-image {
-    height: 200px;
-  }
-
-  /* ===== FOOTER ===== */
-  .footer-texto {
-    font-size: 18px;
-  }
-
-  .footer-icons {
-    gap: 24px;
-  }
-}
-
-/* =====================================================
-   ANCHO CONTROLADO SOLO EN DESKTOP
-   ===================================================== */
-@media (min-width: 1200px) {
-
-  .fitnesspro-benefits,
-  .promo-anuncio,
-  .plan-prueba-section,
-  .faq-climatizacion .climatizacion-container {
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* =====================================================
-   ✅ SOLUCIÓN FINAL: ZOOM SOLO EN DESKTOP
-   NO ROMPE EL DISEÑO ORIGINAL
-   ===================================================== */
-
-@media (min-width: 1200px) {
-  body {
-    zoom: 0.75;
-  }
-}
-
-/* MÓVIL Y TABLET SIN ZOOM */
-@media (max-width: 1199px) {
-  body {
-    zoom: 1;
-  }
 }
